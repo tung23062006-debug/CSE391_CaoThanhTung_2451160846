@@ -110,3 +110,94 @@ Câu B4:
 + Nó hiển thị nội dung chi tiết sản phẩm
 + Chỉ dùng <tbody> 
 - Form này có action là search và method là "GET", input types được dùng là kiểu "text"
+
+Câu C1:
+
+    <header> <!--Đây là phần đầu trang-->
+        <nav> --- <!--Đây là thanh điều hướng -->
+            <ul> 
+                <li></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!--Đây là nội dung chính -->
+        <nav aria-label="Breadcrumb"> <!-- nav vì đây là điều hướng -->
+            <ol> <!-- ol vì breadcrumb có thứ tự -->
+                <li></li> 
+                <li></li> 
+                <li></li> 
+            </ol>
+        </nav>
+
+        <div class="product-layout">
+            <article>   <!-- dùng để bao lấy toàn bộ nội dung sản phẩm -->
+                <section class="gallery">
+                    <figure> <img src="" alt="">     <!-- Đây là dùng để bao hình minh họa -->
+                    </figure>
+                    <div class="thumbnails">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                        <img src="" alt="">
+                    </div>
+                </section>
+
+                <section class="info">                 <!-- Dùng để phân chia các khu vực thông tin khác nhau trong cùng 1 nội dung -->
+                    <h1></h1>                        <!-- Dùng để thể hiện tiêu đề sản phẩm -->
+                    <p class="price"></p>
+                    <div class="rating"></div>
+                    <article class="description">
+                        <h2></h2>
+                        <p></p>
+                    </article>
+                </section>
+
+                <section class="specs">
+                    <h2></h2>
+                    <table>  <!-- Dùng cho phần bảng thông số kỹ thuật-->
+                        <thead>  <!-- Chứa tiêu đề cột để người dùng dễ phân biệt.-->
+                            <tr>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>  <!-- Chứa thông số cụ thể.-->
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="reviews">
+                    <h2></h2>
+                    <form action="">
+                        <textarea></textarea>         <!-- Dùng textarea vì đây là chỗ vt bình luận nên thường cần để 1 ô to-->
+                        <button type="submit"></button>
+                    </form>
+                </section>
+
+            </article>
+
+            <aside> <!-- thẻ bổ trợ thông tin-->
+                <h3></h3>
+                <section class="related-items">
+                    <figure></figure>
+                </section>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer> <!-- Đây là phần chân trang -->
+        <address></address>   <!-- Đây là phần cung cấp các liên hệ của chủ Website -->  
+    </footer>
+
+Câu C2:
+
+Việc chỉ dùng <div> đúng là tiết kiệm được chút thời gian ban đầu, nhưng lại đánh đổi chất lượng cốt lõi của website, đặc biệt ở hai khía cạnh kỹ thuật:
+
+Thứ nhất, về SEO: Các công cụ tìm kiếm (như Google bot) không 'nhìn' thấy giao diện hay đọc hiểu tên class như .tin-tuc-chinh. Chúng quét các thẻ HTML để phân tích cấu trúc. Khi bạn dùng <article>, <main> hay <header>, bot lập tức hiểu đâu là nội dung trọng tâm để ưu tiên lập chỉ mục. Một trang web chỉ toàn <div> giống như một cuốn sách không có mục lục hay tiêu đề chương, khiến bot bối rối và làm giảm thứ hạng tìm kiếm.Thứ hai, về Accessibility (Khả năng truy cập): Web hiện đại phải phục vụ mọi đối tượng, bao gồm cả người khiếm thị sử dụng phần mềm đọc màn hình (Screen Reader).
+Ví dụ chứng minh: Nếu bạn dùng thẻ <nav> cho thanh menu, phần mềm sẽ thông báo 'Đây là khu vực điều hướng' và cho phép người dùng ấn phím tắt để nhảy thẳng đến nội dung chính. Nếu bạn dùng <div class="menu">, trình đọc màn hình chỉ coi nó là một đoạn text vô nghĩa, khiến người khiếm thị phải nghe đọc từng đường link một một cách mệt mỏi. Tương tự, một thẻ <button> mặc định hỗ trợ thao tác bằng phím Tab và Enter, trong khi <div class="btn"> thì không thể nếu bạn không code thêm rất nhiều JavaScript.Tuy nhiên, <div> không hề vô dụng: Trường hợp thực tế tốt nhất để dùng <div> là khi bạn cần một thẻ bao bọc (wrapper) thuần túy để gom nhóm các phần tử phục vụ cho việc chia layout (như dùng Flexbox hay CSS Grid), ví dụ <div class="container-fluid">. Ở đây, bản thân chiếc hộp chứa không mang ý nghĩa gì về mặt nội dung, nên dùng <div> là hoàn toàn chính xác.
