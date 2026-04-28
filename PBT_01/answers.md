@@ -76,3 +76,29 @@ Câu A4: (tệp tham chiếu: tuan_1_html5/05_tables_hyperlinks.md/TABLES & HYPE
 + Không có tính Semantic: Nếu dùng nó để chia cột giao diện, các thiết bị hỗ trợ sẽ đọc trang web của bạn như một mảng dữ liệu rời rạc, gây cực hình cho người dùng khiếm thị và làm giảm điểm SEO thê thảm.
 + Tốc độ Render chậm: Nếu dùng table làm layout, người dùng sẽ thấy một trang web trắng tinh trong vài giây trước khi mọi thứ "ập" ra cùng lúc.
 + Khó làm Responsive (Tương thích di động)
+
+Câu B3:
+
+- Lỗi 1: Dòng 1 — Thiếu từ khóa html trong khai báo DOCTYPE — Cách sửa: Đổi thành <!DOCTYPE html>.
+
+- Lỗi 2: Dòng 2 — Thẻ <html> thiếu thuộc tính ngôn ngữ — Cách sửa: Thêm lang="vi".
+
+- Lỗi 3: Dòng 3 — Thẻ <title> chưa đóng — Cách sửa: Thêm </title> ở cuối.
+
+- Lỗi 4: Dòng 4 — Sai giá trị charset — Cách sửa: Đổi utf8 thành UTF-8.
+
+- Lỗi 5: Dòng 5 — Thẻ <h1> đóng sai cú pháp — Cách sửa: Đổi <h1>Welcome...<h1> thành <h1>Welcome...</h1>.
+
+- Lỗi 6: Dòng 7 — Thẻ <a> đóng sai cú pháp — Cách sửa: Đổi <a>Trang chủ<a> thành <a>Trang chủ</a>.
+
+- Lỗi 7: Dòng 15 — Thuộc tính src không để trong dấu ngoặc kép và thiếu thuộc tính alt — Cách sửa: Đổi thành src="iphone.jpg" alt="...".
+
+- Lỗi 8: Dòng 17 — Lỗi lồng thẻ (Nesting error) — Cách sửa: Đổi <b>... </p></b> thành <b>... </b></p>.
+
+- Lỗi 9: Dòng 34 — Dùng thẻ <main> hai lần (HTML5 quy định <main> là duy nhất) — Cách sửa: Đổi thẻ <main> thứ hai thành <aside> (vì chứa sidebar content).
+
+- Lỗi 10: Dòng 22 — Table thiếu cấu trúc semantic (thead, tbody) và dùng td thay vì th cho tiêu đề — Cách sửa: Thêm <thead>, <tbody> và dùng <th> cho dòng đầu tiên.
+
+- Lỗi 11: Dòng 38 — Thẻ <p> trong footer chưa đóng — Cách sửa: Thêm </p> trước khi đóng </footer>.
+
+- Lỗi 12: Vị trí thẻ <header> — Thẻ <h1> nằm ngoài <header> dù nó là một phần của tiêu đề đầu trang — Cách sửa: Đưa <h1> vào bên trong <header>.
