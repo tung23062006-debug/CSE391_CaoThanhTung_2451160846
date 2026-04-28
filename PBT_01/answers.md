@@ -102,3 +102,11 @@ Câu B3:
 - Lỗi 11: Dòng 38 — Thẻ <p> trong footer chưa đóng — Cách sửa: Thêm </p> trước khi đóng </footer>.
 
 - Lỗi 12: Vị trí thẻ <header> — Thẻ <h1> nằm ngoài <header> dù nó là một phần của tiêu đề đầu trang — Cách sửa: Đưa <h1> vào bên trong <header>.
+
+Câu B4:
+
+- 3 thẻ sematic HTML5 mà trang shopee sử dụng là: <header>,<nav>,<section> (những chỗ khoanh đỏ trong screenshot)
+- Theo như vùng khoanh tròn trong ảnh screenshot thì đó là 1 table:
++ Nó hiển thị nội dung chi tiết sản phẩm
++ Chỉ dùng <tbody> 
+- Form này có action là search và method là "GET", input types được dùng là kiểu "text"
