@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Media Product Page</title>
+    <style>
+        figure img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg width="100" height="100">
+        <rect x="10" y="10" width="30" height="30" fill="blue" />
+        <circle cx="70" cy="25" r="15" fill="red" />
+    </svg>
+
+    <h1>Trang Sản Phẩm Multimedia</h1>
+
+    <figure>
+        <img src="https://laptopaz.vn/media/product/3968_" alt="Ảnh mô tả sản phẩm máy tính xách tay" loading="lazy"
+            style="max-width: 100%; height: auto;">
+        <figcaption>Sản phẩm số 1: Máy tính cao cấp</figcaption>
+    </figure>
+
+    <figure>
+        <img src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:0/q:100/plain/https://cellphones.com.vn/media/wysiwyg/Phone/Apple/iPhone-17/iphone-17-2.jpg"
+            alt="Ảnh mô tả điện thoại di động thông minh" loading="lazy" style="max-width: 100%; height: auto;">
+        <figcaption>Sản phẩm số 2: Điện thoại đời mới</figcaption>
+    </figure>
+
+    <figure>
+        <img src="https://apple.ngocnguyen.vn/cdn/images/202305/goods_img/tai-nghe-bluetooth-airpods-pro-brand-new-100-G10533-1685005682813.png"
+            alt="Ảnh mô tả phụ kiện tai nghe không dây" loading="lazy" style="max-width: 100%; height: auto;">
+        <figcaption>Sản phẩm số 3: Tai nghe chống ồn</figcaption>
+    </figure>
+
+    <hr>
+
+    <h2>Video giới thiệu YouTube</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/C6neHxmoLcE?si=LSsQskwfV7eicIU_"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+    <hr>
+
+    <h2>Video Review Chi Tiết Sản Phẩm</h2>
+    <video controls
+        poster="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80"
+        style="width: 100%; max-width: 800px;">
+        <source src="review-cong-nghe.mp4" type="video/mp4">
+        <source src="review-cong-nghe.webm" type="video/webm">
+        Trình duyệt của bạn không hỗ trợ xem video trực tiếp.
+        Hãy <a href="review-cong-nghe.mp4">tải video tại đây</a>.
+    </video>
+
+    <p><i>Lưu ý: Video này cung cấp cái nhìn thực tế về hiệu năng và thiết kế của sản phẩm.</i></p>
+
+    <h2>Nhạc nền giới thiệu</h2>
+    <audio controls>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Trình duyệt không hỗ trợ nghe nhạc.
+    </audio>
+
+</body>
+
+</html>
