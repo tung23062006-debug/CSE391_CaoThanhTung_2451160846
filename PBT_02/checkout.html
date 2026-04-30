@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thanh Toán Đơn Hàng</title>
+</head>
+
+<body>
+
+    <h1>Thanh toán đơn hàng</h1>
+
+    <section>
+        <h2>Giỏ hàng của bạn</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Sản phẩm</th>
+                    <th>Đơn giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Laptop Dell XPS</td>
+                    <td>25.000.000đ</td>
+                    <td>1</td>
+                    <td>25.000.000đ</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Chuột Logitech</td>
+                    <td>500.000đ</td>
+                    <td>2</td>
+                    <td>1.000.000đ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Bàn phím cơ</td>
+                    <td>1.500.000đ</td>
+                    <td>1</td>
+                    <td>1.500.000đ</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><strong>Tổng cộng</strong></td>
+                    <td><strong>27.500.000đ</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <hr>
+
+    <form action="#" method="POST">
+        <section>
+            <h2>Phương thức thanh toán</h2>
+            <div>
+                <input type="radio" id="cod" name="payment" value="COD" required>
+                <label for="cod">COD (Thanh toán khi nhận hàng)</label>
+            </div>
+            <div>
+                <input type="radio" id="bank" name="payment" value="Chuyển khoản">
+                <label for="bank">Chuyển khoản ngân hàng</label>
+            </div>
+            <div>
+                <input type="radio" id="wallet" name="payment" value="Ví điện tử">
+                <label for="wallet">Ví điện tử</label>
+            </div>
+
+            <p>
+                <label for="coupon">Mã giảm giá:</label>
+                <input type="text" id="coupon" name="coupon" pattern="SALE[0-9]{4}" placeholder="VD: SALE2026"
+                    title="Mã giảm giá phải có định dạng SALE + 4 chữ số">
+            </p>
+
+            <p>
+                <label for="note">Ghi chú:</label><br>
+                <textarea id="note" name="note" rows="3"
+                    placeholder="Ghi chú thêm về đơn hàng (không bắt buộc)"></textarea>
+            </p>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Thông tin giao hàng</h2>
+
+            <p>
+                <label for="delivery_date">Ngày giao hàng mong muốn:</label>
+                <input type="date" id="delivery_date" name="delivery_date" min="2026-05-01" required>
+            </p>
+
+            <p>
+                <label for="time_slot">Khung giờ:</label>
+                <select id="time_slot" name="time_slot" required>
+                    <option value="">--Chọn khung giờ--</option>
+                    <option value="morning">Sáng 8-12h</option>
+                    <option value="afternoon">Chiều 14-18h</option>
+                    <option value="evening">Tối 18-21h</option>
+                </select>
+            </p>
+
+            <p>
+                <label for="delivery_speed">Dự kiến nhận hàng trong (1-7 ngày):</label><br>
+                <input type="range" id="delivery_speed" name="delivery_speed" min="1" max="7" step="1" value="3">
+            </p>
+        </section>
+
+        <br>
+        <button type="submit" aria-label="Xác nhận đặt hàng">Xác nhận đặt hàng</button>
+    </form>
+
+</body>
+
+</html>
