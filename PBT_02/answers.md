@@ -119,3 +119,6 @@ Câu C2:
 4. 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend là:
 - Dữ liệu bị giả mạo: Kẻ tấn công không cần dùng trình duyệt của bạn để gửi form. Họ có thể dùng các công cụ như Postman hoặc cURL để gửi dữ liệu trực tiếp đến Server.
 - Tấn công tiêm mã độc: Các thuộc tính như pattern hay required của HTML5 rất dễ bị xóa bỏ thông qua Inspect Element (F12).
+
+Phần D: 
+link drive của video: https://drive.google.com/drive/folders/1icsxHAl686OkU0TtqmSsdjmqi1l2NY9Z?usp=drive_link
