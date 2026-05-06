@@ -55,3 +55,14 @@ h1 {
 - Ưu điểm: Tách biệt hoàn toàn nội dung (HTML) và giao diện (CSS). Một file CSS có thể dùng cho hàng nghìn trang HTML khác nhau, giúp việc thay đổi giao diện toàn trang web chỉ mất vài giây. Giúp file HTML gọn gàng hơn
 - Nhược điểm: Trình duyệt phải thực hiện thêm một yêu cầu tải file CSS về, có thể làm chậm tốc độ tải trang lần đầu
 - Nên dùng khi: làm dự án thực tế, website đa trang hoặc bất kỳ sản phẩm nào cần tính lâu dài và dễ bảo trì
+
+Câu A2:(Tài liệu tham chiếu:  tuan_2_css_core/09_css_selectors.md)
+
+1. h1                       → Chọn ShopTLU: Chọn tất cả thẻ <h1> có trong trang
+2. .price                   → Chọn 25.990.000đ, 45.990.000đ: Chọn tất cả các phần tử có class là price
+3. #app header              → Chọn Toàn bộ nội dung trong header: trong header	Chọn thẻ <header> nằm bên trong phần tử có id là app
+4. nav a:first-child        → Chọn Home: Chọn thẻ <a> đầu tiên nằm trong thẻ <nav>
+5. .product.featured h2     → Chọn MacBook Pro: Chọn thẻ <h2> nằm trong phần tử có đồng thời cả hai class product và featured
+6. article > p              → Chọn 25.990.000đ, Mô tả sản phẩm... (x2)Chọn các thẻ <p> là con trực tiếp của thẻ <article>
+7. a[href="/"]              → Chọn Home: Chọn thẻ <a> có thuộc tính href chính xác là "/"
+8. .top-bar.dark h1         → Chọn ShopTLU: Chọn thẻ <h1> nằm trong phần tử có cả class top-bar và dark 
