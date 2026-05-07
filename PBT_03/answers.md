@@ -113,4 +113,4 @@ Câu A4: (Tài liệu tham chiếu: tuan_2_css_core/09_css_selectors.md/Specific
 + Rule C có điểm ở cột a (ID) cao nhất (1, 0, 0)
 + Dù các Rule khác có kết hợp nhiều class hay tag đến đâu thì cũng không thể vượt qua một bộ chọn ID (trừ khi có !important hoặc Inline Style)
 3. Element sẽ có màu Cam.Vì Inline style có mức độ ưu tiên cao nhất so với các cách CSS khác
-4. Element sẽ có màu Đen. Vì khi một thuộc tính được đánh dấu là !important, nó sẽ ghi đè lên tất cả các khai báo khác, bất kể độ ưu tiên của bộ chọn đó cao đến đâu đi nữa 
+4. Element sẽ có màu Đen. Vì khi một thuộc tính được đánh dấu là !important, nó sẽ ghi đè lên tất cả các khai báo khác, bất kể độ ưu tiên của bộ chọn đó cao đến đâu.
