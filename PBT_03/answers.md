@@ -129,3 +129,29 @@ Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
 + Chúng ta trừ bớt phần padding và border ra khỏi giá trị width
 + Sidebar mới: 300 - 40 - 2 = 258px
 + Content mới: 660 - 60 - 2 = 598px
+
+Câu C2: (Tài liệu tham chiếu: tuan_2_css_core/09_css_selectors.md)
+Dưới đây là phân tích chi tiết về các giá trị thuộc tính dựa trên quy tắc ưu tiên (Specificity) và kế thừa trong CSS:
+
+1. "Sản phẩm A" (h2)
+- font-size: 20px
++ Giải thích: Selector .card .title nhắm trực tiếp vào phần tử này và đặt giá trị 20px.
+
+- color: green
++ Giải thích: Mặc dù có selector #featured .title (ID + Class) có độ ưu tiên rất cao, nhưng thuộc tính !important trong class
+.highlight sẽ ghi đè tất cả các quy tắc màu sắc khác
+
+2. "Mô tả sản phẩm" (p trong card featured)
+- color: blue
++ Giải thích: Selector .card p có thuộc tính color: inherit;. Nó sẽ lấy màu từ phần tử cha trực tiếp của nó là .card. Trong CSS .card được đặt màu blue, nên thẻ <p> này sẽ nhận màu xanh
+
+3. "Sản phẩm B" (h2)
+- font-size: 20px
++ Giải thích: Tương tự Sản phẩm A, nó chịu ảnh hưởng bởi selector .card .title.
+
+- color: blue
++ Giải thích: Do không có ID #featured hay class .highlight, nó thừa hưởng màu từ cha của nó là .card ( color: blue)
+
+4. "Mô tả sản phẩm B" (p.highlight)
+- color: green
++ Giải thích: Dù thẻ <p> nằm trong .card (đang có màu xanh), nhưng class .highlight đính kèm trực tiếp trên thẻ <p> này chứa từ khóa !important ép màu sắc chuyển sang màu xanh lá cây
