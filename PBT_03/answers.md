@@ -115,6 +115,18 @@ Câu A4: (Tài liệu tham chiếu: tuan_2_css_core/09_css_selectors.md/Specific
 3. Element sẽ có màu Cam.Vì Inline style có mức độ ưu tiên cao nhất so với các cách CSS khác
 4. Element sẽ có màu Đen. Vì khi một thuộc tính được đánh dấu là !important, nó sẽ ghi đè lên tất cả các khai báo khác, bất kể độ ưu tiên của bộ chọn đó cao đến đâu.
 
+Bài B1: 
+
+
+
+
+
+
+
+
+
+
+
 Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
 1. 
 - Chiều rộng thực tế của Sidebar: 300px (width) + 20px * 2 (padding) + 1px*2 (border) = 342px
