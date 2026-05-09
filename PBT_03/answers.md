@@ -116,16 +116,12 @@ Câu A4: (Tài liệu tham chiếu: tuan_2_css_core/09_css_selectors.md/Specific
 4. Element sẽ có màu Đen. Vì khi một thuộc tính được đánh dấu là !important, nó sẽ ghi đè lên tất cả các khai báo khác, bất kể độ ưu tiên của bộ chọn đó cao đến đâu.
 
 Bài B1: 
-
-
-
-
-
-
-
-
-
-
+- Universal Selector (*): Dùng để reset box-sizing và margin/padding cho toàn bộ trang
+- Element Selector (body, header, footer): Dùng để định nghĩa kiểu dáng cơ bản cho các thẻ HTML
+- Class Selector (.active): Dùng để làm nổi bật liên kết điều hướng hiện tại
+- ID Selector (#about, #contact): Dùng để định vị không gian hoặc căn chỉnh riêng cho các section lớn
+- Descendant Selector (nav ul li a): Dùng để chọn các thẻ <a> nằm sâu bên trong cấu trúc menu
+- Pseudo-class Selector (:hover, :nth-child(even)): Dùng để tạo hiệu ứng tương tác và kẻ sọc cho bảng 
 
 Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
 1. 
