@@ -114,3 +114,18 @@ Câu A4: (Tài liệu tham chiếu: tuan_2_css_core/09_css_selectors.md/Specific
 + Dù các Rule khác có kết hợp nhiều class hay tag đến đâu thì cũng không thể vượt qua một bộ chọn ID (trừ khi có !important hoặc Inline Style)
 3. Element sẽ có màu Cam.Vì Inline style có mức độ ưu tiên cao nhất so với các cách CSS khác
 4. Element sẽ có màu Đen. Vì khi một thuộc tính được đánh dấu là !important, nó sẽ ghi đè lên tất cả các khai báo khác, bất kể độ ưu tiên của bộ chọn đó cao đến đâu.
+
+Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
+1. 
+- Chiều rộng thực tế của Sidebar: 300px (width) + 20px * 2 (padding) + 1px*2 (border) = 342px
+- Chiều rộng thực tế của Content: 660px (width) + 30px * 2 (padding) + 1px*2 (border) = 722px
+
+2. Layout bị vỡ là vì: Tổng chiều rộng của Sidebar và Content là:342px + 722px = 1064px trong khi đó container chỉ rộng 960px.Vì 1064px > 960px, trình duyệt không đủ không gian để xếp chúng nằm ngang nên đã đẩy phần tử content xuống dòng dưới
+
+3. 2 cách sửa khác nhau:
+- Cách 1: Sử dụng border-box 
++ Cách này thay đổi cách trình duyệt tính toán kích thước: width sẽ bao gồm cả padding và border
+- Cách 2: Tính toán lại width thủ công (Không dùng border-box)
++ Chúng ta trừ bớt phần padding và border ra khỏi giá trị width
++ Sidebar mới: 300 - 40 - 2 = 258px
++ Content mới: 660 - 60 - 2 = 598px

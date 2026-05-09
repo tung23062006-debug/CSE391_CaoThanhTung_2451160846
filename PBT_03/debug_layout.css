@@ -1,0 +1,40 @@
+.container {
+    width: 960px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border: 2px dashed red;
+}
+
+.clearfix { clear: both; }
+
+.sidebar, .content, .sidebar-manual, .content-manual {
+    float: left;
+    border: 1px solid #333;
+}
+
+/* --- Cách 1: Dùng Border-box --- */
+.fix-1 * {
+    box-sizing: border-box; 
+}
+.fix-1 .sidebar {
+    width: 300px;
+    padding: 20px;
+    background: #add8e6;
+}
+.fix-1 .content {
+    width: 660px;
+    padding: 30px;
+    background: #90ee90;
+}
+
+/* --- Cách 2: Tính toán thủ công (Content-box) --- */
+.fix-2 .sidebar-manual {
+    width: 258px; 
+    padding: 20px;
+    background: #add8e6;
+}
+.fix-2 .content-manual {
+    width: 598px; 
+    padding: 30px;
+    background: #90ee90;
+}
