@@ -123,6 +123,14 @@ Bài B1:
 - Descendant Selector (nav ul li a): Dùng để chọn các thẻ <a> nằm sâu bên trong cấu trúc menu
 - Pseudo-class Selector (:hover, :nth-child(even)): Dùng để tạo hiệu ứng tương tác và kẻ sọc cho bảng 
 
+Bài B2:
+Phần 1:
+- Hộp 1 (content-box): Chiều rộng thực tế = 300(width) + 20 * 2 (padding) + 5 * 2 (border) = 350px
+- Hộp 2 (border-box): Chiều rộng thực tế = 300px -> Chiều rộng thực tế bằng đúng giá trị width đã khai báo
+- Giải thích sự khác biệt:
++ Với content-box, thuộc tính width chỉ định kích thước của phần nội dung (content).Padding và border sẽ được cộng thêm vào bên ngoài, làm tăng tổng kích thước thực tế của hộp
++ Với border-box, thuộc tính width là kích thước tổng cuối cùng.Trình duyệt sẽ tự động co phần content lại sau khi đã trừ đi phần padding và border bên trong
+
 Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
 1. 
 - Chiều rộng thực tế của Sidebar: 300px (width) + 20px * 2 (padding) + 1px*2 (border) = 342px
