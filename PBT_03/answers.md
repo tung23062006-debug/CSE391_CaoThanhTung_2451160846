@@ -131,6 +131,15 @@ Phần 1:
 + Với content-box, thuộc tính width chỉ định kích thước của phần nội dung (content).Padding và border sẽ được cộng thêm vào bên ngoài, làm tăng tổng kích thước thực tế của hộp
 + Với border-box, thuộc tính width là kích thước tổng cuối cùng.Trình duyệt sẽ tự động co phần content lại sau khi đã trừ đi phần padding và border bên trong
 
+Bài B3:
+1. Liệt kê 10 rules + specificity score
+2. Element cuối cùng hiển thị màu gì? Tại sao?
+- Hiển thị màu Đỏ (Red).
+- Vì dù tất cả các rules đều target vào cùng một thẻ <p>,nhưng rule cuối cùng sử dụng từ khóa !important.Trong CSS,!important sẽ ghi đè lên tất cả các tính toán specificity thông thường.Nếu không có !important, màu hiển thị sẽ là Pink (do selector p#demo.text có điểm cao nhất: 1 ID,1 Class,1 Element)
+3. Thay đổi thứ tự rules trong file CSS kết quả có đổi không?
+- Không đổi (trong trường hợp các điểm số khác nhau)
+- Giải thích: Trình duyệt ưu tiên dựa trên điểm Specificity trước, sau đó mới đến thứ tự xuất hiện (Source Order)
+
 Câu C1: (Tài liệu tham chiếu: tuan_2_css_core/11_box_model.md)
 1. 
 - Chiều rộng thực tế của Sidebar: 300px (width) + 20px * 2 (padding) + 1px*2 (border) = 342px

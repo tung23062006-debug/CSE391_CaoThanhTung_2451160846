@@ -1,0 +1,50 @@
+/* 1. Specificity: 0,0,0,0 (Thấp nhất) */
+* {
+    color: gray;
+}
+
+/* 2. Specificity: 0,0,0,1 (Element) */
+p {
+    color: silver;
+}
+
+/* 3. Specificity: 0,0,0,2 (Element + Element - giả định nằm trong body) */
+body p {
+    color: maroon;
+}
+
+/* 4. Specificity: 0,0,1,0 (Class) */
+.text {
+    color: blue;
+}
+
+/* 5. Specificity: 0,0,1,1 (Element + Class) */
+p.text {
+    color: orange;
+}
+
+/* 6. Specificity: 0,0,2,0 (Multi-class) */
+.text.highlight {
+    color: purple;
+}
+
+/* 7. Specificity: 0,0,2,1 (Element + Multi-class) */
+p.text.highlight {
+    color: brown;
+}
+
+/* 8. Specificity: 0,1,0,0 (ID) */
+#demo {
+    color: cyan;
+}
+
+/* 9. Specificity: 0,1,1,1 (ID + Class + Element) */
+p#demo.text {
+    color: pink;
+}
+
+/* 10. Specificity: 1,0,0,0 (Inline style - Giả định nếu viết vào HTML) 
+   Nhưng ở đây ta dùng !important để đại diện cho mức cao nhất trong file CSS */
+#demo {
+    color: red !important;
+}
