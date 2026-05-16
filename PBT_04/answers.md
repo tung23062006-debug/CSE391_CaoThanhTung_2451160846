@@ -80,3 +80,20 @@ Câu A2: Tài liệu tham chiếu: tuan_3_css_advanced/13_creating_responsive_la
 | +---------+                                       |
 +---------------------------------------------------+
 
+Câu C1: 
+1. Navigation bar ngang (logo + menu + buttons)
+Lựa chọn: Flexbox.Vì thanh điều hướng là layout 1 chiều (chỉ dàn hàng ngang), Flexbox cực mạnh trong việc phân bổ không gian theo hàng dọc/ngang, giúp dễ dàng đẩy Logo sang trái, nút bấm sang phải và căn giữa tất cả phần tử theo chiều dọc (align-items: center)
+
+2. Lưới ảnh Instagram (3 cột đều nhau, số ảnh không biết trước)
+Lựa chọn: Grid .Vì đây là layout 2 chiều (vừa theo hàng, vừa theo cột) tạo thành một ma trận vuông vức. Sử dụng Grid giúp ta cố định luôn 3 cột bằng lệnh grid-template-columns: repeat(3, 1fr) ,khi có ảnh mới thêm vào, Grid sẽ tự động xếp đều xuống các dòng tiếp theo mà không lo bị lệch hàng
+
+3. Layout blog: main content + sidebar
+Lựa chọn: Grid (hoặc Flexbox đều được, nhưng Grid tối ưu hơn cho bố cục tổng thể).Vì đây là cấu trúc lớn chia trang web thành các vùng cố định. Dùng Grid giúp bạn kiểm soát chính xác kích thước của Sidebar  và để vùng Main Content tự co giãn theo phần màn hình còn lại (1fr), giữ cho bố cục trang web luôn ổn định khi đổi thiết bị
+
+4. Footer với 4 cột thông tin (Về chúng tôi, Liên kết, Hỗ trợ, Liên hệ)
+Lựa chọn: Kết hợp cả hai
++ Dùng Grid cho khung lớn bên ngoài để chia Footer thành 4 cột đều tăm tắp (grid-template-columns: repeat(4, 1fr))
++ Dùng Flexbox cho nội dung bên trong mỗi cột để dễ căn chỉnh khoảng cách giữa các dòng chữ
+
+5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
+Lựa chọn: Flexbox.Vì Card sản phẩm là layout 1 chiều hướng dọc (flex-direction: column),Flexbox là lựa chọn hoàn hảo vì nó có cơ chế margin-top: auto. Khi đặt thuộc tính này cho nút bấm ở dưới cùng, nó sẽ tự động đẩy nút xuống ghim chặt vào đáy Card, bất kể phần văn bản ở giữa dài hay ngắn
