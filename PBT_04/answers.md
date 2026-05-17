@@ -97,3 +97,54 @@ Lựa chọn: Kết hợp cả hai
 
 5. Card sản phẩm (ảnh trên, text giữa, nút dưới — nút luôn dính đáy)
 Lựa chọn: Flexbox.Vì Card sản phẩm là layout 1 chiều hướng dọc (flex-direction: column),Flexbox là lựa chọn hoàn hảo vì nó có cơ chế margin-top: auto. Khi đặt thuộc tính này cho nút bấm ở dưới cùng, nó sẽ tự động đẩy nút xuống ghim chặt vào đáy Card, bất kể phần văn bản ở giữa dài hay ngắn
+
+Câu C2:
+- Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
++ Nguyên nhân: Mặc dù các khối .card bên ngoài có chiều cao bằng nhau nhờ Flexbox, nhưng cấu trúc bên trong từng card lại chưa được bật Flexbox.Khi tên sản phẩm (h3) ở card này dài 2 dòng, còn card kia chỉ có 1 dòng, nút bấm .btn sẽ bị đẩy theo nội dung chữ và nằm lệch lạc, không thẳng hàng ở đáy
++ Code sửa: 
+.card-container { 
+    display: flex; 
+    flex-wrap: wrap; 
+}
+.card { 
+    width: 30%; 
+    margin: 1.5%; 
+    /* --- BỔ SUNG CODE DƯỚI ĐÂY --- */
+    display: flex;
+    flex-direction: column; /* Xếp nội dung bên trong theo chiều dọc */
+}
+.card img { width: 100%; }
+.card h3 { font-size: 18px; }
+
+.card .btn { 
+    padding: 10px; 
+    /* --- BỔ SUNG CODE DƯỚI ĐÂY --- */
+    margin-top: auto; /* Tự động chiếm khoảng trống phía trên để găm nút xuống đáy */
+}
+- Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
++ Nguyên nhân: Bạn mới chỉ viết display: flex cho cha .hero để kích hoạt tính năng, nhưng chưa ra lệnh cho nó căn chỉnh phần tử con đi đâu cả. Theo mặc định của Flexbox, nếu không nói gì thêm, mọi thứ sẽ tự động dính chặt ở góc trái trên
++ Code sửa:
+.hero {
+    height: 100vh;
+    display: flex;
+    /* --- BỔ SUNG CODE DƯỚI ĐÂY --- */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;     /* Căn giữa theo chiều dọc */
+}
+.hero-content {
+    text-align: center;
+}
+- Lỗi 3: Sidebar bị co lại khi content quá dài
++ Nguyên nhân: Trong Flexbox, các phần tử con có một thuộc tính mặc định gọi là flex-shrink: 1 ,khi phần .content có text quá dài nó sẽ tăng kích thước và buộc cái .sidebar co lại nhỏ hơn kích thước 250px ban đầu 
++ Code sửa: 
+.layout { 
+    display: flex; 
+}
+.sidebar { 
+    width: 250px; 
+    /* --- BỔ SUNG CODE DƯỚI ĐÂY --- */
+    flex-shrink: 0; /* Khóa lại: Kể cả content dài cỡ nào cũng cấm co sidebar của tôi */
+}
+.content { 
+    flex: 1; 
+}
