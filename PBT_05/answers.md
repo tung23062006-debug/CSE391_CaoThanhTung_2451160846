@@ -65,7 +65,7 @@ Câu 1: Tài liệu tham chiếu : tuan_3_css_advanced/13_creating_responsive_la
 - Hầu hết mọi người dùng điện thoại: Hiện nay người ta lướt web bằng điện thoại là chính. Vì vậy, cái gì nhiều người dùng hơn thì mình ưu tiên làm tốt trước.
 - Dễ viết code hơn: Thiết kế cho màn hình nhỏ buộc bạn phải giữ lại những thứ quan trọng nhất. Việc mở rộng một giao diện đơn giản từ điện thoại lên máy tính (thêm cột, kéo rộng ra) bao giờ cũng dễ và ít bị lỗi hơn là việc cố nhồi nhét một giao diện máy tính khổng lồ vào màn hình điện thoại.
 
-Câu A2: tuan_3_css_advanced/13_creating_responsive_layouts.md
+Câu A2: Tài liệu tham khảo: tuan_3_css_advanced/13_creating_responsive_layouts.md
 1. Kích thước Cực nhỏ (Extra Small - xs)
 - Kích thước: < 576px (CSS mặc định, không cần viết media query nếu làm theo Mobile-First)
 - Thiết bị đại diện: Điện thoại di động đứng (iPhone 13/14/15, Samsung Galaxy...)
@@ -95,3 +95,11 @@ Câu A2: tuan_3_css_advanced/13_creating_responsive_layouts.md
 - Kích thước: ≥ 1400px (Viết @media (min-width: 1400px))
 - Thiết bị đại diện: Màn hình PC cỡ lớn, màn hình chuyên dụng độ phân giải cao
 - Số cột lưới sản phẩm: 5 cột hoặc 6 cột
+
+Câu A3: Tài liệu tham khảo: tuan_3_css_advanced/13_creating_responsive_layouts.md/ Media Queries — "Nếu màn hình nhỏ → đổi layout"
+Chiều rộng màn hình	    .container width
+375px (iPhone SE)	           100%
+600px	                       540px
+800px                          720px
+1000px	                       960px
+1400px	                       1140px
