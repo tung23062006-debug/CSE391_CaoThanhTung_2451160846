@@ -103,3 +103,93 @@ Chiều rộng màn hình	    .container width
 800px                          720px
 1000px	                       960px
 1400px	                       1140px
+
+Câu A4: Tài liệu tham khảo: tuan_3_css_advanced/16_sass_scss.md/4 Tính Năng Thay Đổi Cuộc Đời
+1. Variables — "Sửa 1 chỗ, 47 chỗ tự đổi"
+- Thay vì phải nhớ và viết đi viết lại một mã màu hoặc một kích thước ở khắp nơi, ta có thể đặt tên cho nó thành một cái "biến" để tái sử dụng.Sau này nếu muốn đổi màu toàn bộ trang web, bạn chỉ cần sửa đúng một nơi duy nhất
+- Ví dụ: 
+$primary-color: #3498db; /* Khai báo biến */
+$padding-base: 15px;
+
+button {
+  background-color: $primary-color; /* Sử dụng biến */
+  padding: $padding-base;
+}
+
+2. Nesting (viết CSS lồng nhau)
+- SCSS cho phép bạn viết các thẻ con nằm bên trong thẻ cha giống hệt như cấu trúc của cây thư mục HTML.Cách viết này giúp code gọn gàng, dễ quản lý và không phải viết lại tên thẻ cha nhiều lần
+- Ví dụ:
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+
+  /* Lồng thẻ h2 bên trong .card */
+  h2 {
+    font-size: 20px;
+    color: #333;
+  }
+
+  /* Lồng class .card-desc bên trong .card */
+  .card-desc {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* Lồng thẻ button bên trong .card */
+  button {
+    background-off: blue;
+    color: white;
+
+    /* Dùng dấu & để viết hiệu ứng hover cho chính cái button đó */
+    &:hover {
+      background-color: darkblue;
+    }
+  }
+}
+
+3. Mixins (@mixin, @include)
+- Tính năng Mixins trong SCSS hoạt động giống như một "đoạn code mẫu" hoặc một "cái khuôn" được làm sẵn. Ta có thể gom những thuộc tính CSS hay dùng chung với nhau lại thành một nhóm, đặt tên cho nó, rồi sau này có thể "gọi" nó ra ở bất kỳ chỗ nào cần dùng mà không phải gõ lại từ đầu
+- Ví dụ: 
+/* 1. Định nghĩa cái khuôn Mixin (Dùng từ khóa @mixin) */
+/* Cặp ngoặc đơn (...) chứa các tham số có thể thay đổi linh hoạt */
+@mixin tao-hinh-tron($kich-thuoc, $mau-nen) {
+  width: $kich-thuoc;
+  height: $kich-thuoc;
+  background-color: $mau-nen;
+  border-radius: 50%; /* Bo tròn tuyệt đối */
+}
+
+/* 2. Gọi khuôn ra để dùng ở các class khác nhau (Dùng từ khóa @include) */
+.anh-avatar {
+  @include tao-hinh-tron(80px, #ccc); /* Tạo hình tròn rộng 80px, nền xám */
+}
+
+.nut-thong-bao {
+  @include tao-hinh-tron(20px, red);  /* Tạo hình tròn rộng 20px, nền đỏ */
+}
+
+4. @extend / Inheritance
+- Tính năng @extend / Inheritance (Kế thừa) giúp bạn chia sẻ một tập hợp các thuộc tính CSS từ selector này sang selector khác, cực kỳ thích hợp cho các thành phần giao diện có cấu trúc giống hệt nhau nhưng chỉ khác nhau một chút về màu sắc hoặc chi tiết nhỏ
+- Ví dụ: 
+/* 1. Tạo một class cơ bản chứa các thuộc tính chung (Khung sườn) */
+.thong-bao-goc {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* 2. Dùng @extend để kế thừa lại class gốc */
+.thong-bao-thanh-cong {
+  @extend .thong-bao-goc; /* Lấy hết padding, border, border-radius... */
+  background-color: #d4edda; /* Thêm màu nền xanh của riêng mình */
+  color: #155724;
+}
+
+.thong-bao-loi {
+  @extend .thong-bao-goc; /* Lấy hết padding, border, border-radius... */
+  background-color: #f8d7da; /* Thêm màu nền đỏ của riêng mình */
+  color: #721c24;
+}
+
