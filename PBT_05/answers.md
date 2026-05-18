@@ -193,3 +193,9 @@ button {
   color: #721c24;
 }
 
+- Trình duyệt không đọc được file .scss vì: Trình duyệt chỉ hiểu duy nhất CSS tiêu chuẩn. File .scss chứa nhiều cú pháp nâng cao (biến, lồng nhau, hàm...) giống như ngôn ngữ lập trình, trình duyệt không có bộ dịch để hiểu nên sẽ báo lỗi và không hiển thị giao diện
+- Các bước chuyển SCSS → CSS: 
++ Cách dễ nhất: Cài extension Live Sass Compiler trên VS Code, bấm Watch Sass. Mỗi khi lưu file .scss, nó tự đẻ ra file .css
++ Dùng lệnh: Cài Sass qua NodeJS rồi chạy lệnh: sass input.scss output.css
++ Dùng công cụ: Cấu hình trong các dự án dùng Vite, Webpack để tự động dịch ngầm
+Kết quả: Nhúng file .css vừa sinh ra vào thẻ <link> của file HTML là xong
