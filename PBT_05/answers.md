@@ -64,3 +64,34 @@ Câu 1: Tài liệu tham chiếu : tuan_3_css_advanced/13_creating_responsive_la
 - Nhanh và nhẹ cho điện thoại: Điện thoại thường mạng yếu hơn máy tính. Viết kiểu này giúp điện thoại chỉ cần đọc những đoạn code đơn giản, gọn nhẹ trước, giúp trang web tải nhanh hơn.
 - Hầu hết mọi người dùng điện thoại: Hiện nay người ta lướt web bằng điện thoại là chính. Vì vậy, cái gì nhiều người dùng hơn thì mình ưu tiên làm tốt trước.
 - Dễ viết code hơn: Thiết kế cho màn hình nhỏ buộc bạn phải giữ lại những thứ quan trọng nhất. Việc mở rộng một giao diện đơn giản từ điện thoại lên máy tính (thêm cột, kéo rộng ra) bao giờ cũng dễ và ít bị lỗi hơn là việc cố nhồi nhét một giao diện máy tính khổng lồ vào màn hình điện thoại.
+
+Câu A2: tuan_3_css_advanced/13_creating_responsive_layouts.md
+1. Kích thước Cực nhỏ (Extra Small - xs)
+- Kích thước: < 576px (CSS mặc định, không cần viết media query nếu làm theo Mobile-First)
+- Thiết bị đại diện: Điện thoại di động đứng (iPhone 13/14/15, Samsung Galaxy...)
+- Số cột lưới sản phẩm: 1 cột hoặc 2 cột
+
+2. Kích thước Nhỏ (Small - sm)
+- Kích thước: ≥ 576px (Viết @media (min-width: 576px))
+- Thiết bị đại diện: Điện thoại di động xoay ngang
+- Số cột lưới sản phẩm: 2 cột
+
+3. Kích thước Trung bình (Medium - md)
+- Kích thước: ≥ 768px (Viết @media (min-width: 768px))
+- Thiết bị đại diện: Máy tính bảng (iPad, Samsung Galaxy Tab...)
+- Số cột lưới sản phẩm: 3 cột
+
+4. Kích thước Lớn (Large - lg)
+- Kích thước: ≥ 992px (Viết @media (min-width: 992px))
+- Thiết bị đại diện: Máy tính xách tay nhỏ (Laptop màn hình 11-13 inch), máy tính bảng cỡ lớn (iPad Pro) đặt ngang.
+- Số cột lưới sản phẩm: 4 cột
+
+5. Kích thước Cực lớn (Extra Large - xl)
+- Kích thước: ≥ 1200px (Viết @media (min-width: 1200px))
+- Thiết bị đại diện: Máy tính để bàn (Desktop), Laptop thông thường (14-15.6 inch)
+- Số cột lưới sản phẩm: 4 cột hoặc 5 cột
+
+6. Kích thước Siêu lớn (Extra Extra Large - xxl)
+- Kích thước: ≥ 1400px (Viết @media (min-width: 1400px))
+- Thiết bị đại diện: Màn hình PC cỡ lớn, màn hình chuyên dụng độ phân giải cao
+- Số cột lưới sản phẩm: 5 cột hoặc 6 cột
