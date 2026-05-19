@@ -207,3 +207,27 @@ sass scss/style.scss style.css
 
 # Lệnh bật chế độ tự động đồng bộ (Mỗi lần nhấn Ctrl + S file sẽ tự cập nhật):
 sass --watch scss/style.scss style.css
+
+Câu C1: 
+2. 
+A. Navigation thay đổi thế nào?
+- Desktop (1440px): Thanh điều hướng hiển thị dưới dạng Sidebar đứng (Left Navigation) cố định ở bên trái, chứa đầy đủ các mục: Trang chủ, Shorts, Kênh đăng ký, Thư viện, Lịch sử... Ngoài ra thanh tìm kiếm nằm chễm chệ ở chính giữa phía trên cùng
+- Tablet (768px): Thanh Sidebar đứng khổng lồ biến mất để nhường không gian cho video. Thay vào đó, nó thu gọn lại thành một Thanh biểu tượng dọc (Mini Guide) rất nhỏ ở sát mép trái, chỉ giữ lại 4 icon chính (Trang chủ, Shorts, Kênh đăng ký, Bạn). Khi bạn bấm vào nút Hamburger Menu (3 dấu gạch ☰) ở góc trên, thanh menu lớn mới trượt ra (gọi là Drawer menu)
+- Mobile (375px): Trên màn hình điện thoại, toàn bộ menu bên trái bị xóa bỏ hoàn toàn. Thay vào đó, YouTube chuyển sang sử dụng Thanh điều hướng đáy trang (Bottom Navigation Bar) gồm 5 nút biểu tượng (Trang chủ, Shorts, dấu +, Kênh đăng ký, Bạn) tương tự như ứng dụng trên điện thoại.Thanh tìm kiếm ở trên cùng cũng thu gọn lại thành một biểu tượng kính lúp nhỏ, bấm vào mới hiện ô nhập dữ liệu
+
+B. Lưới Content thay đổi mấy cột?
+- Lưới hiển thị danh sách video trang chủ thay đổi linh hoạt theo cơ chế auto-fill của CSS Grid:
++ Desktop (1440px): Lưới hiển thị 4 cột video trên một hàng ngang (nếu màn hình to hơn nữa như 1920px có thể lên tới 5 hoặc 6 cột)
++ Tablet (768px): Lưới tự động co rút lại thành 2 cột video trên một hàng ngang. Kích thước hình ảnh thu nhỏ (thumbnail) của video được phóng to ra để vừa vặn với không gian
++ Mobile (375px): Toàn bộ giao diện biến thành 1 cột duy nhất. Mỗi video chiếm trọn vẹn chiều ngang của màn hình di động, ảnh thumbnail trải rộng giúp người dùng dễ lướt xem bằng một tay
+
+C. Elements nào bị ẩn trên mobile?
+- Để giao diện gọn gàng và tải nhanh hơn trên điện thoại, YouTube ẩn đi các phần sau:
++ Thanh danh mục từ khóa (Tag Chips): Các nút bo tròn chọn chủ đề (Tất cả, Trò chơi, Âm nhạc, Trực tiếp...) ở ngay dưới thanh tìm kiếm trên Desktop sẽ bị ẩn bớt, thu gọn lại hoặc cho phép cuộn ngang (Scrollbar ẩn) chứ không dàn trải ra
++ Thông tin phụ của Video: Trên Mobile, phần mô tả ngắn, số lượt xem và thời gian đăng video bị ẩn bớt hoặc viết rất nhỏ gọn ngay cạnh tên kênh, tránh làm loãng màn hình
++ Nút chức năng nhanh: Các nút như Tải xuống, Chia sẻ, Tạo đoạn video hay nút Chỉnh sửa (nếu là kênh của bạn) khi xem video trên Mobile sẽ bị giấu vào trong dấu 3 chấm hoặc thu nhỏ lại dưới dạng icon
+
+D. Font size có thay đổi không?
+- Có thay đổi nhẹ để phù hợp tầm mắt:
++ Trên Desktop, tiêu đề video hiển thị cỡ chữ khoảng 16px (độ đậm nét cao)
++ Khi sang Mobile, tiêu đề video được hạ xuống khoảng 14px để tránh việc chữ quá dài bị tràn xuống dòng thứ 3, giúp giữ khoảng cách giữa các video cân đối. Các thông tin như tên kênh, số lượt xem giảm xuống còn 12px
