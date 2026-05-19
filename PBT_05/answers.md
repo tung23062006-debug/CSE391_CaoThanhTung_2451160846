@@ -231,3 +231,137 @@ D. Font size có thay đổi không?
 - Có thay đổi nhẹ để phù hợp tầm mắt:
 + Trên Desktop, tiêu đề video hiển thị cỡ chữ khoảng 16px (độ đậm nét cao)
 + Khi sang Mobile, tiêu đề video được hạ xuống khoảng 14px để tránh việc chữ quá dài bị tràn xuống dòng thứ 3, giúp giữ khoảng cách giữa các video cân đối. Các thông tin như tên kênh, số lượt xem giảm xuống còn 12px
+
+Câu C2: 
+1. Wireframe (Sơ đồ bố cục) cho 3 kích thước màn hình
+- Giao diện Mobile (< 768px)
++ Thành phần bị ẩn: Không ẩn các thành phần cốt lõi của luồng đặt bàn, nhưng ảnh bản đồ Google Maps có thể tạm ẩn (hoặc thay bằng một nút bấm "Xem bản đồ" để tránh làm nặng trang trên 3G/4G)
++ Vị trí Form: Form đặt bàn nằm dọc, chiếm 100% chiều ngang và xếp ngay bên dưới Grid 6 ảnh món ăn để người dùng xem món xong kéo xuống là đặt bàn được ngay
+┌──────────────────────────────────────┐
+│        HEADER (Logo | Hotline)       │
+├──────────────────────────────────────┤
+│              HERO IMAGE              │
+├──────────────────────────────────────┤
+│          GRID MÓN ĂN (1 cột)         │
+│          [Ảnh 1] -> [Ảnh 6]          │
+├──────────────────────────────────────┤
+│             FORM ĐẶT BÀN             │
+│        (Xếp dọc full chiều ngang)    │
+├──────────────────────────────────────┤
+│         [Nút bấm xem Bản đồ]         │
+├──────────────────────────────────────┤
+│                FOOTER                │
+└──────────────────────────────────────┘
+
+- Giao diện Tablet (768px - 1023px)
++ Grid ảnh món ăn: Tự động chia thành 2 cột (mỗi hàng 2 ảnh, xếp thành 3 hàng) hoặc 3 cột tùy thuộc vào độ lớn của ảnh.Ở đây chọn 2 cột để ảnh món ăn hiển thị rõ nét, không bị quá bé
++ Vị trí Bản đồ: Bản đồ Google Maps được hiện lại và xếp nằm ngang, trải dài full 100% chiều ngang ở ngay trên vùng Footer
+┌──────────────────────────────────────┐
+│        HEADER (Logo | Hotline)       │
+├──────────────────────────────────────┤
+│              HERO IMAGE              │
+├──────────────────────────────────────┤
+│        GRID MÓN ĂN (2 cột)           │
+│   ┌──────────────┐ ┌──────────────┐  │
+│   │    Ảnh 1     │ │    Ảnh 2     │  │
+│   └──────────────┘ └──────────────┘  │
+│   [...tiếp tục cho đến ảnh 6...]     │
+├──────────────────────────────────────┤
+│             FORM ĐẶT BÀN             │
+├──────────────────────────────────────┤
+│         BẢN ĐỒ GOOGLE MAPS           │
+├──────────────────────────────────────┤
+│                FOOTER                │
+└──────────────────────────────────────┘
+
+- Giao diện Desktop (≥ 1024px)
++ Layout tổng thể: Chia thành 2 cột chính dạng cấu trúc Main Content + Sidebar
++ Hệ thống Sidebar: Có Sidebar. Cột bên trái (rộng hơn) chứa Grid ảnh món ăn và Bản đồ. Cột bên phải (Sidebar cố định) chứa Form đặt bàn để form này luôn đập vào mắt người dùng khi họ cuộn trang xem món ăn
++ Grid ảnh món ăn: Nằm trong vùng nội dung chính bên trái và nâng lên thành 3 cột
+┌──────────────────────────────────────────────────────────────────┐
+│                     HEADER (Logo | Hotline)                      │
+├────────────────────────────────────────────────================──┤
+│                            HERO IMAGE                            │
+├──────────────────────────────────┬───────────────────────────────┤
+│  NỘI DUNG CHÍNH (Cột trái)       │  SIDEBAR ĐẶT BÀN (Cột phải)   │
+│                                  │                               │
+│  GRID MÓN ĂN (3 cột)             │  ┌─────────────────────────┐  │
+│  ┌───────┐ ┌───────┐ ┌───────┐   │  │       FORM ĐẶT BÀN      │  │
+│  │ Ảnh 1 │ │ Ảnh 2 │ │ Ảnh 3 │   │  │                         │  │
+│  └───────┘ └───────┘ └───────┘   │  │ (Nằm cố định bên phải   │  │
+│  [...ảnh 4, 5, 6...]             │  │  giúp tăng tỷ lệ đặt)   │  │
+│                                  │  └─────────────────────────┘  │
+│  BẢN ĐỒ GOOGLE MAPS              │                               │
+├──────────────────────────────────┴───────────────────────────────┤
+│                              FOOTER                              │
+└──────────────────────────────────────────────────────────────────┘
+2. CSS Skeleton tối giản 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.hero {
+  height: 60vh; /* Ảnh cover chiếm 60% chiều cao màn hình */
+  background: #ccc;
+}
+
+.dish-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.dish-item {
+  background: #ddd;
+  height: 200px; 
+}
+
+.booking-form {
+  background: #eee;
+  padding: 20px;
+}
+
+.google-map {
+  display: none; 
+}
+
+.footer {
+  background: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .dish-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .google-map {
+    display: block;
+    background: #bbb;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .dish-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
