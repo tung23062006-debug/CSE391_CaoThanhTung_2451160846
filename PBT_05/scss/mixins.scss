@@ -1,0 +1,16 @@
+@mixin respond-to($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin flex-center($justify: center, $align: center, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin card-shadow($shadow-color: rgba(0, 0, 0, 0.1)) {
+    box-shadow: 0 2px 5px $shadow-color;
+}

@@ -200,4 +200,10 @@ button {
 + Dùng công cụ: Cấu hình trong các dự án dùng Vite, Webpack để tự động dịch ngầm
 Kết quả: Nhúng file .css vừa sinh ra vào thẻ <link> của file HTML là xong
 
+Bài B3:
+Lệnh compile: 
+# Lệnh biên dịch một lần duy nhất:
+sass scss/style.scss style.css
 
+# Lệnh bật chế độ tự động đồng bộ (Mỗi lần nhấn Ctrl + S file sẽ tự cập nhật):
+sass --watch scss/style.scss style.css
