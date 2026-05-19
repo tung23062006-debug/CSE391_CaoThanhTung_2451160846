@@ -100,9 +100,9 @@ Câu A3: Tài liệu tham khảo: tuan_3_css_advanced/13_creating_responsive_lay
 Chiều rộng màn hình	    .container width
 375px (iPhone SE)	           100%
 600px	                       540px
-800px                          720px
-1000px	                       960px
-1400px	                       1140px
+800px                        720px
+1000px	                     960px
+1400px	                     1140px
 
 Câu A4: Tài liệu tham khảo: tuan_3_css_advanced/16_sass_scss.md/4 Tính Năng Thay Đổi Cuộc Đời
 1. Variables — "Sửa 1 chỗ, 47 chỗ tự đổi"
@@ -199,3 +199,5 @@ button {
 + Dùng lệnh: Cài Sass qua NodeJS rồi chạy lệnh: sass input.scss output.css
 + Dùng công cụ: Cấu hình trong các dự án dùng Vite, Webpack để tự động dịch ngầm
 Kết quả: Nhúng file .css vừa sinh ra vào thẻ <link> của file HTML là xong
+
+
