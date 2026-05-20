@@ -89,7 +89,49 @@ Bootstrap: Gần như bằng 0 dòng CSS.Lập trình viên chỉ cần gọi tr
 - Khi làm các trang web đòi hỏi tính nghệ thuật, sáng tạo đột phá, độc quyền thương hiệu (Landing page sự kiện,Portfolio cá nhân phá cách)
 - Khi dự án yêu cầu tối ưu dung lượng website ở mức siêu nhẹ (Bootstrap chứa rất nhiều đoạn code thừa mà một dự án nhỏ không bao giờ dùng tới,làm nặng trang web)
 
-Câu B1:
+TRACK B — TAILWINDCSS
+Câu A1: 
+1. Thẻ ngoài cùng (<div> - Container chính)
+- flex → display: flex; (Kích hoạt mô hình hộp linh hoạt Flexbox)
+- items-center → align-items: center; (Căn các phần tử con theo chiều dọc vào giữa)
+- justify-between → justify-content: space-between; (Phân phối các phần tử con cách đều nhau, phần tử đầu sát lề trái, phần tử cuối sát lề phải)
+- p-4 → padding: 1rem; /* 16px */ (Tạo khoảng cách đệm đều 4 phía bên trong)
+- bg-white → background-color: rgb(255, 255, 255); (Màu nền trắng)
+- shadow-md → box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); (Tạo hiệu ứng đổ bóng kích cỡ trung bình)
+- rounded-lg → border-radius: 0.5rem; /* 8px */ (Bo tròn các góc thẻ với bán kính trung bình-lớn)
+- hover:shadow-xl → Khi di chuột qua (:hover), áp dụng box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); (Bóng đổ lớn hơn, tạo hiệu ứng nổi lên)
+- transition-shadow → transition-property: box-shadow; (Chỉ định hiệu ứng chuyển cảnh mượt mà cho thuộc tính bóng đổ)
+- duration-300 → transition-duration: 300ms; (Thời gian diễn ra hiệu ứng chuyển cảnh là 300 miligiây)
+
+2. Thẻ ảnh (<img> - Avatar)
+- w-16 → width: 4rem; /* 64px */ (Chiều rộng của ảnh)
+- h-16 → height: 4rem; /* 64px */ (Chiều cao của ảnh)
+- rounded-full → border-radius: 9999px; (Bo tròn tối đa, biến ảnh hình vuông thành hình tròn)
+- object-cover → object-fit: cover; (Giữ nguyên tỷ lệ ảnh và cắt bớt phần thừa để vừa khít khung, không bị méo ảnh)
+
+3. Thẻ bọc thông tin (<div> - Chứa tên và chức vụ)
+- ml-4 → margin-left: 1rem; /* 16px */ (Tạo khoảng cách bên trái, đẩy khối thông tin cách ra khỏi ảnh đại diện)
+- flex-1 → flex: 1 1 0%; (Cho phép khối này tự động giãn ra để chiếm toàn bộ không gian trống còn lại trong Flexbox)
+
+4. Thẻ tên (<h3> - Nguyễn Văn A)
+- text-lg → font-size: 1.125rem; /* 18px */ và line-height: 1.75rem; (Tăng kích thước chữ lên mức trung bình lớn)
+- font-semibold → font-weight: 600; (Làm chữ đậm vừa phải)
+- text-gray-800 → color: rgb(31, 41, 55); (Đổi màu chữ sang màu xám đậm gần như đen)
+- truncate → overflow: hidden; text-overflow: ellipsis; white-space: nowrap; (Nếu chữ quá dài sẽ không xuống dòng mà tự động cắt và thêm dấu ba chấm "...")
+
+5. Thẻ chức vụ (<p> - Frontend Developer)
+- text-sm → font-size: 0.875rem; /* 14px */ và line-height: 1.25rem; (Giảm kích thước chữ nhỏ xuống một chút)
+- text-gray-500 → color: rgb(107, 114, 128); (Đổi màu chữ sang màu xám nhạt để tạo sự phân cấp thông tin phụ)
+
+6. Thẻ nút (<button> - Follow)
+- px-4 → padding-left: 1rem; padding-right: 1rem; /* 16px */ (Tạo khoảng đệm trái và phải bên trong nút)
+- py-2 → padding-top: 0.5rem; padding-bottom: 0.5rem; /* 8px */ (Tạo khoảng đệm trên và dưới bên trong nút)
+- bg-blue-500 → background-color: rgb(59, 130, 246); (Màu nền của nút là màu xanh dương)
+- text-white → color: rgb(255, 255, 255); (Màu chữ của nút là màu trắng)
+- rounded-md → border-radius: 0.375rem; /* 6px */ (Bo tròn vừa phải các góc của nút)
+- hover:bg-blue-600 → Khi di chuột qua (:hover), áp dụng background-color: rgb(37, 99, 235); (Màu nền nút chuyển sang màu xanh dương đậm hơn)
+- focus:ring-2 → Khi nút được focus (nhấp vào hoặc dùng phím Tab), áp dụng box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); (Tạo một vòng viền ring dày 2px bao quanh nút)
+- focus:ring-blue-300 → Khi nút được focus, đặt màu cho vòng viền ring là màu xanh dương nhạt (rgba(147, 197, 253, 1)) để tăng tính dễ tiếp cận (accessibility)
 
 
 
