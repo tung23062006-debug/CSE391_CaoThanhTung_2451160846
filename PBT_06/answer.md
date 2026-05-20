@@ -38,3 +38,18 @@ Giao diện Desktop (≥ 992px)
 - Do quy luật Kế thừa từ nhỏ đến lớn (Mobile-First):
 + Khi viết col-12 (Mobile) --> màn hình lớn hơn là sm sẽ tự động kế thừa độ rộng 12 phần này
 + Nó chỉ dừng lại khi bị thằng lớn hơn là col-md-6 đè lên
+
+Câu A2: 
+1. Class d-none d-md-block
+- Ẩn khi: Màn hình nhỏ dưới 768px (Mobile)
+- Hiện khi: Màn hình từ 768px trở lên (Tablet, Desktop)
+2. 5 Spacing Utilities
+- mt-3: Cách lề trên ra ngoài (mức 3 - 16px)
+- px-4: Đệm bên trong trái + phải (mức 4 - 24px)
+- mb-auto: Tự động đẩy hết lề dưới (dùng để căn chỉnh khối)
+- py-2: Đệm bên trong trên + dưới (mức 2 - 8px)
+- ms-2: Cách lề trái ra ngoài (Start -  8px)
+3. Phân biệt 3 loại Container
+.container: Rộng cố định theo từng nấc (ví dụ: 720px, 1140px), có khoảng trống 2 bên cánh màn hình
+.container-fluid: Luôn tràn viền 100% ở mọi màn hình
+.container-md: Tràn viền 100% trên Mobile, bắt đầu khóa cố định từ màn hình Tablet (768px) trở lên
