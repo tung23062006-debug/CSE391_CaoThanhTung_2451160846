@@ -152,5 +152,29 @@ class="hidden md:flex"
 - hidden → Ẩn mặc định trên mobile (display: none)
 - md:flex → Lên tablet trở lên thì hiện dạng flex (display: flex)
 
+Câu C1 
+1. HTML file size
+- Tailwind HTML nặng hơn: Do chứa chuỗi class dài trực tiếp trong thẻ
+- Tổng dung lượng tải lại nhỏ hơn: Loại bỏ hoàn toàn file .css riêng biệt, giảm số lượng request giúp trang tải nhanh hơn
 
+2. Maintainability (Bảo trì)
+- Dễ sửa nhanh: Sửa trực tiếp tại thẻ, không sợ ảnh hưởng hay làm vỡ giao diện ở các trang khác
+- Độ dễ đọc: Ban đầu nhìn rối mắt, nhưng khi quen sẽ biết ngay layout hoạt động thế nào mà không cần mở file CSS tra cứu
+
+3. Reusability (Tái sử dụng)
+- Cách tối ưu: Tách thành các Component (React, Vue, Blade) để gọi lại
+- Dùng @apply: Gom các utility classes trong file CSS tĩnh: .btn-primary { @apply px-4 py-2 bg-blue-500 text-white; }
+
+Câu C2 
+1. Tại sao file CSS cuối cùng của Tailwind nhỏ hơn Bootstrap?
+- Bootstrap phình to theo component: Càng nhiều giao diện,file CSS càng nặng do chứa code định sẵn (kể cả khi không dùng)
+- Tailwind bão hòa theo thuộc tính: Số lượng class cơ bản (flex, p-4) là hữu hạn. Dự án càng lớn,Tailwind chỉ tái sử dụng lại các class cũ, dung lượng file CSS không tăng thêm (thường chỉ 10KB - 20KB)
+
+2. Tailwind JIT & Purge là gì?
+- JIT (Just-In-Time): Quét toàn bộ file dự án theo thời gian thực và chỉ sinh ra những class CSS nào thực sự được bạn viết trong code
+- Loại bỏ gì? Triệt tiêu 100% các class không dùng tới, loại bỏ hoàn toàn code thừa (Dead code) giúp file xuất ra nhẹ tối đa
+
+3. Khi nào KHÔNG nên dùng TailwindCSS?
+- Tình huống 1 (Nội dung Rich Text/CMS): Các bài viết từ text editor, file Markdown sinh ra thẻ HTML thuần (<h1>, <p>) không có class.Tailwind mặc định sẽ xóa sạch style của chúng
+- Tình huống 2 (Nối chuỗi class động): Viết kiểu bg-${color}-500 lấy biến từ database. Trình quét JIT của Tailwind không hiểu text động nên sẽ không sinh ra code CSS (Trường hợp này nên dùng inline style của CSS thuần)
 
