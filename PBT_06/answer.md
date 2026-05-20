@@ -133,5 +133,24 @@ Câu A1:
 - focus:ring-2 → Khi nút được focus (nhấp vào hoặc dùng phím Tab), áp dụng box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); (Tạo một vòng viền ring dày 2px bao quanh nút)
 - focus:ring-blue-300 → Khi nút được focus, đặt màu cho vòng viền ring là màu xanh dương nhạt (rgba(147, 197, 253, 1)) để tăng tính dễ tiếp cận (accessibility)
 
+Câu A2:
+1. Kích thước màn hình (Responsive Prefix)
+- Tailwind áp dụng cơ chế Mobile-first (từ màn hình nhỏ đến lớn):
++ md: → Từ 768px trở lên (Tablet)
++ lg: → Từ 1024px trở lên (Laptop)
++ xl: → Từ 1280px trở lên (Desktop)
++ Ví dụ: md:grid-cols-2 lg:grid-cols-4 nghĩa là: Từ màn hình tablet hiện 2 cột, lên màn hình laptop trở lên hiện 4 cột.
+
+2. Trạng thái tương tác (State Modifiers)
+- hover: → Khi di chuột vào phần tử
+- focus: → Khi nhấp vào / tab trúng phần tử (đang được chọn)
+- active: → Khi đang nhấn giữ chuột trên phần tử.
+- group-hover: → Khi di chuột vào thẻ cha (thẻ cha phải có class group),thì thẻ con sẽ thay đổi theo
+
+3. Class cho yêu cầu "Ẩn trên mobile, hiện flex trên tablet"
+class="hidden md:flex"
+- hidden → Ẩn mặc định trên mobile (display: none)
+- md:flex → Lên tablet trở lên thì hiện dạng flex (display: flex)
+
 
 
