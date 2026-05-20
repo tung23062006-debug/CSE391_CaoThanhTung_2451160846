@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNEAKERX - Cửa Hàng Giày Thể Thao Chính Hãng</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+        .carousel-item img {
+            height: 550px;
+            object-fit: cover;
+        }
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 350px;
+            }
+        }
+        .card-img-container img {
+            height: 250px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase tracking-wider" href="#">
+                <i class="bi bi-lightning-charge-fill text-warning me-1"></i>SneakerX
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-medium">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sản Phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bộ Sưu Tập</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên Hệ</a>
+                    </li>
+                </ul>
+                
+                <form class="d-flex me-3" role="search">
+                    <div class="input-group">
+                        <input class="form-control bg-secondary text-white border-0" type="search" placeholder="Tìm kiếm giày..." aria-label="Search">
+                        <button class="btn btn-warning" type="submit"><i class="bi bi-search"></i></button>
+                    </div>
+                </form>
+                
+                <div class="position-relative d-inline-block mt-2 mt-lg-0">
+                    <a href="#" class="btn btn-outline-light position-relative">
+                        <i class="bi bi-cart3"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="heroCarousel" class="carousel slide carousel-fade shadow-sm" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200" class="d-block w-100" alt="Giày thể thao đỏ năng động">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4 mb-5 text-start start-10 max-w-50">
+                    <span class="badge bg-warning text-dark mb-2 fw-bold text-uppercase">Xu Hướng 2026</span>
+                    <h1 class="display-4 fw-bold">BỨC PHÁ MỌI GIỚI HẠN</h1>
+                    <p class="lead">Khám phá bộ sưu tập những đôi giày chạy bộ cao cấp nhất giúp nâng tầm bước chân của bạn.</p>
+                    <a href="#" class="btn btn-warning btn-lg fw-bold px-4">Mua Ngay</a>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200" class="d-block w-100" alt="Giày thể thao màu sắc cá tính">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4 mb-5 text-center">
+                    <span class="badge bg-danger mb-2 fw-bold text-uppercase">Siêu Ưu Đãi</span>
+                    <h1 class="display-4 fw-bold">SẮC MÀU ĐƯỜNG PHỐ</h1>
+                    <p class="lead">Định hình phong cách cá nhân với các mẫu Sneaker Streetwear phối màu cực đỉnh.</p>
+                    <a href="#" class="btn btn-danger btn-lg fw-bold px-4">Xem Bộ Sưu Tập</a>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="5000">
+                <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1200" class="d-block w-100" alt="Giày classic lịch lãm">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-4 mb-5 text-end end-10">
+                    <span class="badge bg-success mb-2 fw-bold text-uppercase">Hàng Mới Về</span>
+                    <h1 class="display-4 fw-bold">SỰ TỐI GIẢN TINH TẾ</h1>
+                    <p class="lead">Sự kết hợp hoàn hảo giữa thiết kế cổ điển và công nghệ êm ái hiện đại.</p>
+                    <a href="#" class="btn btn-success btn-lg fw-bold px-4">Khám Phá</a>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <main class="container my-5">
+        <div class="row mb-4 align-items-center">
+            <div class="col-12 text-center text-md-start">
+                <h2 class="fw-bold text-uppercase border-start border-4 border-warning ps-3 d-inline-block">Sản Phẩm Nổi Bật</h2>
+                <p class="text-muted ms-md-3 d-md-inline-block mb-0">Thiết kế mới nhất, trải nghiệm êm ái nhất</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 badge bg-danger m-3 px-3 py-2 fs-6 shadow-sm">
+                        SALE -30%
+                    </span>
+                    <div class="card-img-container bg-white p-2 text-center">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" class="card-img-top rounded" alt="Giày Nike Air Max Đỏ">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-dark mb-1">Nike Air Max Speed</h5>
+                            <p class="card-text text-muted small mb-2 text-truncate">Giày chạy bộ chuyên dụng, đế đệm khí nén cực êm ái.</p>
+                            <div class="mb-3">
+                                <span class="text-danger fw-bold fs-5">2,450,000đ</span>
+                                <span class="text-muted text-decoration-line-through small ms-2">3,500,000đ</span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark fw-medium" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-bs-title="Nike Air Max Speed" data-bs-price="2,450,000đ" data-bs-img="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=500" data-bs-desc="Dòng giày chạy huyền thoại với phối màu đỏ rực lửa cá tính, sở hữu bộ đệm khí Air Max toàn phần giúp bảo vệ tối đa khớp gối khi di chuyển hoặc vận động cường độ cao.">
+                                <i class="bi bi-eye me-1"></i>Xem nhanh
+                            </button>
+                            <button class="btn btn-warning fw-bold"><i class="bi bi-cart-plus me-1"></i>Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 badge bg-danger m-3 px-3 py-2 fs-6 shadow-sm">
+                        SALE -15%
+                    </span>
+                    <div class="card-img-container bg-white p-2 text-center">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=500" class="card-img-top rounded" alt="Giày Adidas Pastel">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-dark mb-1">Adidas Candy Pastel</h5>
+                            <p class="card-text text-muted small mb-2 text-truncate">Phối màu ngọt ngào phong cách thời trang đường phố.</p>
+                            <div class="mb-3">
+                                <span class="text-danger fw-bold fs-5">1,870,000đ</span>
+                                <span class="text-muted text-decoration-line-through small ms-2">2,200,000đ</span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark fw-medium" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-bs-title="Adidas Candy Pastel" data-bs-price="1,870,000đ" data-bs-img="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=500" data-bs-desc="Mẫu sneaker quốc dân sở hữu bản phối màu Pastel cực kỳ trẻ trung và năng động. Thích hợp cho cả đi học, đi làm, dạo phố và dễ dàng phối với mọi loại trang phục.">
+                                <i class="bi bi-eye me-1"></i>Xem nhanh
+                            </button>
+                            <button class="btn btn-warning fw-bold"><i class="bi bi-cart-plus me-1"></i>Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 badge bg-danger m-3 px-3 py-2 fs-6 shadow-sm">
+                        HOT
+                    </span>
+                    <div class="card-img-container bg-white p-2 text-center">
+                        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=500" class="card-img-top rounded" alt="Giày Puma Classic">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-dark mb-1">Puma Court Classic</h5>
+                            <p class="card-text text-muted small mb-2 text-truncate">Thiết kế tối giản lịch lãm tinh tế trên từng đường may.</p>
+                            <div class="mb-3">
+                                <span class="text-danger fw-bold fs-5">1,590,000đ</span>
+                                <span class="text-muted text-decoration-line-through small ms-2">1,990,000đ</span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark fw-medium" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-bs-title="Puma Court Classic" data-bs-price="1,590,000đ" data-bs-img="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=500" data-bs-desc="Chất liệu da thuộc cao cấp ôm khít bàn chân. Kiểu dáng basic mang đậm chất retro giúp bạn tự tin nổi bật trong mọi sự kiện mà vẫn vô cùng lịch lãm.">
+                                <i class="bi bi-eye me-1"></i>Xem nhanh
+                            </button>
+                            <button class="btn btn-warning fw-bold"><i class="bi bi-cart-plus me-1"></i>Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card h-100 shadow-sm border-0 position-relative">
+                    <span class="position-absolute top-0 start-0 badge bg-danger m-3 px-3 py-2 fs-6 shadow-sm">
+                        SALE -50%
+                    </span>
+                    <div class="card-img-container bg-white p-2 text-center">
+                        <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=500" class="card-img-top rounded" alt="Giày Nike Air Force Volt">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title fw-bold text-dark mb-1">Nike Zoom Neon Volt</h5>
+                            <p class="card-text text-muted small mb-2 text-truncate">Màu phản quang cá tính mạnh mẽ cho tín đồ thể thao độc lạ.</p>
+                            <div class="mb-3">
+                                <span class="text-danger fw-bold fs-5">1,650,000đ</span>
+                                <span class="text-muted text-decoration-line-through small ms-2">3,300,000đ</span>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-dark fw-medium" data-bs-toggle="modal" data-bs-target="#quickViewModal" data-bs-title="Nike Zoom Neon Volt" data-bs-price="1,650,000đ" data-bs-img="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=500" data-bs-desc="Sở hữu phối màu Neon Volt rực rỡ thu hút mọi ánh nhìn bất kể ngày hay đêm. Tích hợp đệm Zoom siêu nảy hỗ trợ tăng tốc tối đa cho các runner thực thụ.">
+                                <i class="bi bi-eye me-1"></i>Xem nhanh
+                            </button>
+                            <button class="btn btn-warning fw-bold"><i class="bi bi-cart-plus me-1"></i>Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title fw-bold" id="quickViewModalLabel">Chi Tiết Sản Phẩm</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <div class="row g-4">
+                        <div class="col-12 col-md-6 text-center">
+                            <img src="" id="modalProductImg" class="img-fluid rounded border p-2 bg-light" alt="Ảnh sản phẩm chi tiết">
+                        </div>
+                        <div class="col-12 col-md-6 d-flex flex-column justify-content-between">
+                            <div>
+                                <h3 class="fw-bold text-dark mb-2" id="modalProductTitle">Tên Sản Phẩm</h3>
+                                <div class="mb-3">
+                                    <span class="text-danger h4 fw-bold" id="modalProductPrice">0đ</span>
+                                    <span class="badge bg-danger ms-2">Đang Giảm Giá</span>
+                                </div>
+                                <hr>
+                                <p class="text-muted lh-base" id="modalProductDesc">Mô tả chi tiết sản phẩm...</p>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold small text-uppercase">Chọn Kích Thước (Size):</label>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-sm btn-outline-secondary px-3">39</button>
+                                        <button class="btn btn-sm btn-dark px-3">40</button>
+                                        <button class="btn btn-sm btn-outline-secondary px-3">41</button>
+                                        <button class="btn btn-sm btn-outline-secondary px-3">42</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-grid mt-3">
+                                <button class="btn btn-warning btn-lg fw-bold"><i class="bi bi-cart3 me-2"></i>Thêm Ngay Vào Giỏ Hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-secondary pt-5 pb-3 border-top border-warning border-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="text-white fw-bold text-uppercase mb-3"><i class="bi bi-lightning-charge-fill text-warning me-1"></i>SneakerX</h5>
+                    <p class="small">Hệ thống phân phối giày thể thao sneaker chính hãng hàng đầu Việt Nam. Nâng niu bước chân Việt từ năm 2020.</p>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="text-white fw-bold text-uppercase mb-3">Chính Sách</h5>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li><a href="#" class="text-secondary text-decoration-none">Chính sách bảo hành 6 tháng</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Đổi trả hàng trong 7 ngày</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="text-white fw-bold text-uppercase mb-3">Liên Kết Nhanh</h5>
+                    <ul class="list-unstyled small d-grid gap-2">
+                        <li><a href="#" class="text-secondary text-decoration-none">Giày Chạy Bộ (Running)</a></li>
+                        <li><a href="#" class="text-secondary text-decoration-none">Giày Thời Trang (Sneakers)</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <h5 class="text-white fw-bold text-uppercase mb-3">Đăng Ký Nhận Tin</h5>
+                    <div class="input-group">
+                        <input type="email" class="form-control form-control-sm bg-secondary text-white border-0" placeholder="Email của bạn...">
+                        <button class="btn btn-warning btn-sm fw-bold text-dark" type="button">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-6 text-center text-md-start small">
+                    &copy; 2026 SneakerX Store. Tất cả các quyền được bảo lưu. Thiết kế bởi Sinh viên TLU.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var quickViewModal = document.getElementById('quickViewModal');
+        if (quickViewModal) {
+            quickViewModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                
+                var title = button.getAttribute('data-bs-title');
+                var price = button.getAttribute('data-bs-price');
+                var img = button.getAttribute('data-bs-img');
+                var desc = button.getAttribute('data-bs-desc');
+                
+                var modalTitle = quickViewModal.querySelector('#modalProductTitle');
+                var modalPrice = quickViewModal.querySelector('#modalProductPrice');
+                var modalImg = quickViewModal.querySelector('#modalProductImg');
+                var modalDesc = quickViewModal.querySelector('#modalProductDesc');
+                
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalPrice) modalPrice.textContent = price;
+                if (modalImg) modalImg.src = img;
+                if (modalDesc) modalDesc.textContent = desc;
+            });
+        }
+    </script>
+</body>
+</html>
