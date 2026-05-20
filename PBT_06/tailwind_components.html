@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Component Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <nav
+        class="bg-white border-b border-slate-200 sticky top-0 z-40 w-full px-6 py-3 flex justify-between items-center shadow-sm">
+        <div class="flex items-center space-x-3">
+            <div
+                class="bg-blue-600 text-white p-2 rounded-lg font-black text-xl tracking-wider shadow-md shadow-blue-200">
+                TW
+            </div>
+            <span class="font-bold text-xl text-slate-900 hidden sm:inline-block">Component UI Kit</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="https://tailwindcss.com/docs" target="_blank"
+                class="text-sm font-medium text-slate-600 hover:text-blue-600 transition px-3 py-2 rounded-md hover:bg-slate-100">
+                Tài liệu Tailwind ↗
+            </a>
+            <button
+                class="bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium px-4 py-2 rounded-lg transition shadow-sm">
+                Tải Xuống Kit
+            </button>
+        </div>
+    </nav>
+
+    <div class="flex flex-1 w-full relative">
+
+        <aside
+            class="w-64 bg-white border-r border-slate-200 p-6 space-y-6 hidden md:block shrink-0 sticky top-[65px] h-[calc(100vh-65px)] overflow-y-auto">
+            <div>
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Danh mục Components</p>
+                <nav class="space-y-1">
+                    <a href="#buttons"
+                        class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition">
+                        <span class="mr-3 text-lg">🔘</span> Buttons
+                    </a>
+                    <a href="#cards"
+                        class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition">
+                        <span class="mr-3 text-lg">🎴</span> Cards
+                    </a>
+                    <a href="#forms"
+                        class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition">
+                        <span class="mr-3 text-lg">📝</span> Forms & Inputs
+                    </a>
+                    <a href="#alerts"
+                        class="flex items-center px-3 py-2.5 text-sm font-medium rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition">
+                        <span class="mr-3 text-lg">⚠️</span> Alerts & Thông báo
+                    </a>
+                </nav>
+            </div>
+            <div class="pt-6 border-t border-slate-100">
+                <div class="p-4 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100">
+                    <h5 class="text-xs font-bold text-blue-900 uppercase">Hệ Thống Tiêu Chuẩn</h5>
+                    <p class="text-xs text-blue-700 mt-1 leading-relaxed">Được xây dựng 100% bằng utility classes của
+                        TailwindCSS, thân thiện responsive.</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-4 sm:p-8 lg:p-12 max-w-5xl mx-auto w-full space-y-16 overflow-x-hidden">
+
+            <section id="buttons" class="scroll-mt-24">
+                <div class="border-b border-slate-200 pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">1. Buttons Component Collection</h2>
+                    <p class="text-sm text-slate-500 mt-1">Tổng hợp đầy đủ các biến thể nút nhấn, trạng thái tương tác
+                        và kích cỡ thông dụng.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Kiểu dáng & Trạng
+                            thái tương tác</h3>
+                        <div class="flex flex-wrap gap-4 items-center">
+                            <button
+                                class="px-5 py-2.5 bg-blue-600 text-white font-medium text-sm rounded-lg hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 transition">
+                                Primary
+                            </button>
+
+                            <button
+                                class="px-5 py-2.5 bg-slate-200 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-300 active:bg-slate-400 focus:outline-none focus:ring-4 focus:ring-slate-100 transition">
+                                Secondary
+                            </button>
+
+                            <button
+                                class="px-5 py-2.5 bg-transparent border-2 border-slate-300 text-slate-700 font-medium text-sm rounded-lg hover:bg-slate-100 hover:border-slate-400 active:bg-slate-200 focus:outline-none focus:ring-4 focus:ring-slate-100 transition">
+                                Outline
+                            </button>
+
+                            <button disabled
+                                class="px-5 py-2.5 bg-slate-200 text-slate-400 font-medium text-sm rounded-lg cursor-not-allowed opacity-60">
+                                Disabled
+                            </button>
+
+                            <button
+                                class="px-5 py-2.5 bg-blue-600 text-white font-medium text-sm rounded-lg flex items-center cursor-wait opacity-80">
+                                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                        stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor"
+                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                    </path>
+                                </svg>
+                                Loading...
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Kích thước tùy
+                            biến (Sizes)</h3>
+                        <div class="flex flex-wrap gap-4 items-baseline">
+                            <button
+                                class="px-3 py-1.5 bg-indigo-600 text-white font-medium text-xs rounded-md hover:bg-indigo-700 transition">
+                                Small (sm)
+                            </button>
+
+                            <button
+                                class="px-5 py-2.5 bg-indigo-600 text-white font-medium text-sm rounded-lg hover:bg-indigo-700 transition">
+                                Medium (md)
+                            </button>
+
+                            <button
+                                class="px-7 py-3.5 bg-indigo-600 text-white font-medium text-base rounded-xl hover:bg-indigo-700 shadow-md shadow-indigo-100 transition">
+                                Large (lg)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cards" class="scroll-mt-24">
+                <div class="border-b border-slate-200 pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">2. Cards Component Collection</h2>
+                    <p class="text-sm text-slate-500 mt-1">Các cấu trúc thẻ thông dụng được ứng dụng thực tế cao trên
+                        giao diện ứng dụng.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white rounded-xl shadow-md border border-slate-100 hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <div
+                                class="h-44 bg-slate-200 flex items-center justify-center text-slate-400 font-bold tracking-wider relative">
+                                IMAGE PLACEHOLDER
+                                <span
+                                    class="absolute top-3 right-3 bg-red-500 text-white font-bold text-xs px-2 py-1 rounded">HOT</span>
+                            </div>
+                            <div class="p-5">
+                                <h4
+                                    class="font-bold text-slate-900 text-lg hover:text-blue-600 transition cursor-pointer mb-2">
+                                    Tai Nghe Không Dây Gen 5</h4>
+                                <p class="text-slate-500 text-xs leading-relaxed line-clamp-2">Công nghệ khử tiếng ồn
+                                    chủ động vượt trội, thời lượng pin sử dụng lên đến 40 giờ liên tục.</p>
+                            </div>
+                        </div>
+                        <div class="p-5 pt-0 flex items-center justify-between">
+                            <span class="text-lg font-black text-slate-900">2.490.000đ</span>
+                            <button
+                                class="text-xs bg-blue-50 text-blue-600 font-bold px-3 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition">Thêm
+                                vào</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-md border border-slate-100 hover:shadow-xl transition-shadow duration-300 p-6 text-center flex flex-col items-center">
+                        <div
+                            class="w-20 h-20 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-2xl shadow-inner mb-4">
+                            VA
+                        </div>
+                        <h4 class="font-bold text-slate-900 text-lg">Nguyễn Văn A</h4>
+                        <p class="text-xs text-blue-600 font-medium mb-4">Senior UI/UX Designer</p>
+                        <p class="text-slate-500 text-xs leading-relaxed mb-5">Đam mê kiến tạo nên các trải nghiệm người
+                            dùng tối giản, hiện đại và tinh tế.</p>
+                        <div class="w-full grid grid-cols-2 gap-2">
+                            <button
+                                class="py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-lg transition">Nhắn
+                                tin</button>
+                            <button
+                                class="py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-lg transition">Theo
+                                dõi</button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-xl shadow-md border-2 border-blue-500 hover:shadow-xl transition-shadow duration-300 p-6 relative flex flex-col justify-between">
+                        <span
+                            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white font-bold text-[10px] px-3 py-0.5 rounded-full uppercase tracking-widest">Phổ
+                            biến nhất</span>
+                        <div>
+                            <div class="text-center mb-6">
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Gói Premium</p>
+                                <div class="mt-2">
+                                    <span class="text-3xl font-black text-slate-900">$29</span>
+                                    <span class="text-slate-400 text-sm">/ tháng</span>
+                                </div>
+                            </div>
+                            <ul class="space-y-3 text-xs text-slate-600 mb-6">
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Toàn bộ tính
+                                    năng cao cấp</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Dung lượng lưu
+                                    trữ 100GB</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Hỗ trợ kỹ thuật
+                                    24/7 ưu tiên</li>
+                                <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Báo cáo phân
+                                    tích chuyên sâu</li>
+                            </ul>
+                        </div>
+                        <button
+                            class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs rounded-lg transition shadow-md shadow-blue-100">Bắt
+                            đầu ngay</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="forms" class="scroll-mt-24">
+                <div class="border-b border-slate-200 pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">3. Forms & Inputs Component</h2>
+                    <p class="text-sm text-slate-500 mt-1">Các thành phần cấu trúc form hoàn thiện, tích hợp đầy đủ hiệu
+                        ứng focus-ring chuẩn hóa.</p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm max-w-2xl mx-auto">
+                    <form class="space-y-5" onsubmit="event.preventDefault();">
+
+                        <div>
+                            <label for="full-name"
+                                class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Họ và tên
+                                của bạn</label>
+                            <input type="text" id="full-name" placeholder="Ví dụ: Nguyễn Văn A"
+                                class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200">
+                        </div>
+
+                        <div>
+                            <label for="job-role"
+                                class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Vị trí công
+                                việc</label>
+                            <select id="job-role"
+                                class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200">
+                                <option value="">Vui lòng lựa chọn vị trí...</option>
+                                <option value="frontend">Frontend Developer</option>
+                                <option value="backend">Backend Developer</option>
+                                <option value="uiux">UI/UX Designer</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">Giới thiệu
+                                ngắn về bản thân</label>
+                            <textarea id="message" rows="3" placeholder="Nhập tóm tắt mô tả về kinh nghiệm của bạn..."
+                                class="w-full px-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition duration-200"></textarea>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-3">Lĩnh vực
+                                quan tâm</span>
+                            <div class="space-y-2">
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="interest"
+                                        class="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded focus:ring-blue-500 focus:ring-2 transition">
+                                    <span class="text-sm text-slate-600 group-hover:text-slate-900 transition">Phát
+                                        triển ứng dụng Web (Web Development)</span>
+                                </label>
+                                <label class="flex items-center space-x-3 cursor-pointer group">
+                                    <input type="checkbox" name="interest"
+                                        class="w-4 h-4 text-blue-600 bg-slate-50 border-slate-300 rounded focus:ring-blue-500 focus:ring-2 transition">
+                                    <span class="text-sm text-slate-600 group-hover:text-slate-900 transition">Trí tuệ
+                                        nhân tạo & Học máy (AI/Machine Learning)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit"
+                                class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm rounded-lg transition focus:ring-4 focus:ring-blue-100">
+                                Lưu thông tin đăng ký
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section id="alerts" class="scroll-mt-24">
+                <div class="border-b border-slate-200 pb-4 mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900">4. Alerts & Notifications</h2>
+                    <p class="text-sm text-slate-500 mt-1">Các trạng thái thông báo màu hệ thống. (Bấm nút X bên phải để
+                        đóng hộp thoại thử nghiệm).</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div id="alert-success"
+                        class="flex justify-between items-center p-4 bg-emerald-50 border-l-4 border-emerald-500 text-emerald-800 rounded-r-lg transition-all duration-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-emerald-500 font-bold text-lg">✓</span>
+                            <p class="text-sm font-medium"><strong>Thành công:</strong> Dữ liệu hồ sơ cá nhân của bạn đã
+                                được cập nhật thành công lên máy chủ!</p>
+                        </div>
+                        <button onclick="closeAlert('alert-success')"
+                            class="text-emerald-500 hover:text-emerald-800 focus:outline-none text-sm font-bold px-2 py-1 hover:bg-emerald-100 rounded transition">✕</button>
+                    </div>
+
+                    <div id="alert-error"
+                        class="flex justify-between items-center p-4 bg-red-50 border-l-4 border-red-500 text-red-800 rounded-r-lg transition-all duration-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-red-500 font-bold text-lg">🛑</span>
+                            <p class="text-sm font-medium"><strong>Lỗi hệ thống:</strong> Kết nối bị gián đoạn. Vui lòng
+                                kiểm tra lại đường truyền internet và thử lại.</p>
+                        </div>
+                        <button onclick="closeAlert('alert-error')"
+                            class="text-red-500 hover:text-red-800 focus:outline-none text-sm font-bold px-2 py-1 hover:bg-red-100 rounded transition">✕</button>
+                    </div>
+
+                    <div id="alert-warning"
+                        class="flex justify-between items-center p-4 bg-amber-50 border-l-4 border-amber-500 text-amber-800 rounded-r-lg transition-all duration-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-amber-500 font-bold text-lg">⚠️</span>
+                            <p class="text-sm font-medium"><strong>Cảnh báo:</strong> Tài khoản của bạn sắp hết hạn dung
+                                lượng lưu trữ miễn phí. Vui lòng nâng cấp gói.</p>
+                        </div>
+                        <button onclick="closeAlert('alert-warning')"
+                            class="text-amber-500 hover:text-amber-800 focus:outline-none text-sm font-bold px-2 py-1 hover:bg-amber-100 rounded transition">✕</button>
+                    </div>
+
+                    <div id="alert-info"
+                        class="flex justify-between items-center p-4 bg-blue-50 border-l-4 border-blue-500 text-blue-800 rounded-r-lg transition-all duration-300">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-blue-500 font-bold text-lg">ℹ</span>
+                            <p class="text-sm font-medium"><strong>Thông tin:</strong> Hệ thống sẽ tiến hành bảo trì
+                                định kỳ vào lúc 23:00 đêm nay. Thời gian dự kiến kéo dài 1 tiếng.</p>
+                        </div>
+                        <button onclick="closeAlert('alert-info')"
+                            class="text-blue-500 hover:text-blue-800 focus:outline-none text-sm font-bold px-2 py-1 hover:bg-blue-100 rounded transition">✕</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-400 text-xs py-6 text-center border-t border-slate-800 w-full mt-auto">
+        <p>&copy; 2026 Tailwind Component Studio. Được tối ưu hóa bằng Tailwind CSS Utility Classes.</p>
+    </footer>
+
+    <script>
+        function closeAlert(alertId) {
+            const alertElement = document.getElementById(alertId);
+            if (alertElement) {
+                alertElement.classList.add('opacity-0', 'scale-95');
+                setTimeout(() => {
+                    alertElement.style.display = 'none';
+                }, 300);
+            }
+        }
+    </script>
+</body>
+
+</html>
