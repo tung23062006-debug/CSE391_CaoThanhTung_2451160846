@@ -1,3 +1,4 @@
+TRACK A — BOOTSTRAP 5
 Câu A1: Tài liệu tham chiếu: tuan_4_css_frameworks/bootstrap/02_grid_system/02_grid_system.md
 Kích thước	       < 768px	            768px - 991px	    ≥ 992px
 Số cột	              12                      6                3
@@ -87,3 +88,6 @@ Bootstrap: Gần như bằng 0 dòng CSS.Lập trình viên chỉ cần gọi tr
 5. Khi nào KHÔNG NÊN dùng Bootstrap?
 - Khi làm các trang web đòi hỏi tính nghệ thuật, sáng tạo đột phá, độc quyền thương hiệu (Landing page sự kiện,Portfolio cá nhân phá cách)
 - Khi dự án yêu cầu tối ưu dung lượng website ở mức siêu nhẹ (Bootstrap chứa rất nhiều đoạn code thừa mà một dự án nhỏ không bao giờ dùng tới,làm nặng trang web)
+
+
+
