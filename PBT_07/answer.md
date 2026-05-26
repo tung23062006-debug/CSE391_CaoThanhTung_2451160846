@@ -55,4 +55,20 @@ console.log({} + []);                // [object Object]
 + Toán tử + có hai chức năng: Nó vừa là phép cộng toán học, vừa là phép nối chuỗi. Trong cơ chế của JavaScript,khi có sự xung đột giữa số và chuỗi, phép nối chuỗi luôn được ưu tiên.Chỉ cần một vế là chuỗi,vế còn lại sẽ bị kéo theo thành chuỗi
 + Toán tử - chỉ có một chức năng: Nó chỉ biết làm toán trừ.Vì không có khái niệm "nối hay trừ chuỗi chữ", JavaScript không có lựa chọn nào khác ngoài việc ép tất cả các vế về kiểu số để thực hiện phép tính
 
+Câu A3:
+
+console.log(5 == "5");                // true
+console.log(5 === "5");               // false
+console.log(null == undefined);       // true
+console.log(null === undefined);      // false
+console.log(NaN == NaN);             // false
+console.log(0 == false);             // true
+console.log(0 === false);            // false
+console.log("" == false);            // true
+
+- Luôn luôn dùng === vì:
++ An toàn: === bắt buộc trùng cả kiểu dữ liệu và giá trị. Dùng == dễ bị lỗi ngầm do cơ chế tự động ép kiểu cực kỳ tai hại của JavaScript 
++ Tốc độ: === chạy nhanh hơn vì JavaScript không phải tốn thời gian tự quy đổi kiểu dữ liệu giữa 2 vế
++ Rõ ràng: Code dễ đọc, tường minh, không cần phải đoán già đoán non xem biến này sẽ bị ép về kiểu gì
+- Chỉ dùng == khi muốn check nhanh một biến có phải là null hoặc undefined hay không
 
