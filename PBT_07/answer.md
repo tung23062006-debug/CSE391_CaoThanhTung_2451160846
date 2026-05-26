@@ -72,3 +72,28 @@ console.log("" == false);            // true
 + Rõ ràng: Code dễ đọc, tường minh, không cần phải đoán già đoán non xem biến này sẽ bị ép về kiểu gì
 - Chỉ dùng == khi muốn check nhanh một biến có phải là null hoặc undefined hay không
 
+Câu A4:
+- Tất cả giá trị Falsy trong JavaScript:
++ 6 giá trị FALSY (coi như false): false, 0, "", null, undefined, NaN
++ TẤT CẢ còn lại = TRUTHY (coi như true): true, 42, "hello", [], {}, -1, "0", "false"
+
+if ("0") console.log("A");           // có in
+if ("") console.log("B");            // không in    
+if ([]) console.log("C");            // có in
+if ({}) console.log("D");            // có in
+if (null) console.log("E");          // không in
+if (0) console.log("F");             // không in
+if (-1) console.log("G");            // có in
+if (" ") console.log("H");           // có in
+
+Câu A5:
+- Cách 1: var greeting = `Xin chào ${name}! Bạn ${age} tuổi.`;
+- Cách 2: var url = `https://api.example.com/users/${userId}/orders?page=${page}`;
+- Cách 3: 
+var html = `
+<div class="card">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <span>Giá: ${price}đ</span>
+</div>
+`;
