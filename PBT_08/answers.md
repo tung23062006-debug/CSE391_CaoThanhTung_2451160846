@@ -125,3 +125,55 @@ console.log(product.specs.ram);
 // Nó sao chép các giá trị nguyên bản ở tầng ngoài cùng, nhưng với object lồng bên trong là `specs`, 
 // nó chỉ sao chép "địa chỉ vùng nhớ" (reference) chứ không tạo ra object specs mới 
 // Do đó, cả `product.specs` và `copy.specs` đều đang trỏ chung vào một chỗ,sửa một bên là bên kia đổi theo)
+
+Câu C1:
+Viết lại thành ≤ 10 dòng dùng filter, map, sort, destructuring, arrow functions: 
+
+const processOrders = (orders) => 
+    orders
+        .filter(({ status, total }) => status === "completed" && total > 100000)
+        .map(({ id, customer, total }) => ({
+            id, customer, total,
+            discount: total * 0.1,
+            finalTotal: total * 0.9
+        }))
+        .sort((a, b) => b.finalTotal - a.finalTotal);
+
+Câu C2:
+
+const miniArray = {
+    map(arr, fn) {
+        const result = [];
+        for (let i = 0; i < arr.length; i++) {
+            result.push(fn(arr[i], i, arr));
+        }
+        return result;
+    },
+
+    filter(arr, fn) {
+        const result = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (fn(arr[i], i, arr)) {
+                result.push(arr[i]);
+            }
+        }
+        return result;
+    },
+    reduce(arr, fn, initialValue) {
+        const hasInitialValue = initialValue !== undefined;
+        let accumulator = hasInitialValue ? initialValue : arr[0];
+        let startIndex = hasInitialValue ? 0 : 1;
+
+        for (let i = startIndex; i < arr.length; i++) {
+            accumulator = fn(accumulator, arr[i], i, arr);
+        }
+        
+        return accumulator;
+    }
+};
+
+// Test phải pass:
+console.log(miniArray.map([1, 2, 3], x => x * 2));          //[2, 4, 6]
+console.log(miniArray.filter([1, 2, 3, 4], x => x > 2));      //[3, 4]
+console.log(miniArray.reduce([1, 2, 3, 4], (a, b) => a + b, 0)); //10
+console.log(miniArray.reduce([1, 2, 3, 4], (a, b) => a + b));    //10
