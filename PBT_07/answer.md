@@ -97,3 +97,39 @@ var html = `
     <span>Giá: ${price}đ</span>
 </div>
 `;
+
+Câu C1:
+- Lỗi 1: Gộp dòng code và thiếu dấu xuống dòng 
++ Vị trí: return giaSauGiam}// Testconst gia = tinhGiaGiamGia("100000", 20)console.log("Giá sau giảm: " + gia + "đ")const gia2 = tinhGiaGiamGia(50000, 110)console.log("Giá: " + gia2)for (var i = 0; i < 5; i++) {
++ Giải thích: Các câu lệnh khai báo const, console.log và vòng lặp for bị dính liền trên cùng một dòng với đóng ngoặc nhọn } và chú thích // Test. Điều này khiến trình biên dịch hiểu sai cú pháp và gây lỗi
++ Cách sửa: Tách các câu lệnh ra các dòng riêng biệt cho rõ ràng
+
+- Lỗi 2: Sử dụng phép gán = thay vì phép so sánh == hoặc === 
++ Vị trí: if (giaSauGiam = 0) {
++ Giải thích: Trong câu lệnh if, ta đang dùng một dấu bằng (=), đây là phép gán chứ không phải phép so sánh. Đoạn code này sẽ gán giá trị 0 cho biến giaSauGiam, và điều kiện if (0) luôn trả về false (vì 0 là một giá trị falsy). Do đó, câu lệnh console.log("Sản phẩm miễn phí!") sẽ không bao giờ được chạy
+
++ Cách sửa: Đổi thành giaSauGiam === 0
+
+- Lỗi 3: Truyền sai kiểu dữ liệu - Chuỗi số thay vì Số 
++ Vị trí: const gia = tinhGiaGiamGia("100000", 20)
++ Giải thích: Ta đang truyền vào một chuỗi "100000" (String) thay vì một số (Number). Dù JavaScript có cơ chế tự động ép kiểu khi thực hiện phép nhân (giaBan * phanTramGiam), việc truyền sai kiểu dữ liệu rất dễ gây lỗi logic ở các phép tính khác 
++ Cách sửa: Truyền vào số 100000
+
+- Lỗi 4: Sử dụng var thay vì let hoặc const bên trong hàm 
++ Vị trí: var giamGia = giaBan * phanTramGiam / 100
++ Giải thích: Từ khóa var có phạm vi hàm và dễ bị đưa lên đầu hàm, có thể gây ra những tác dụng phụ không mong muốn trong các dự án lớn
++ Cách sửa: Thay var bằng let hoặc const 
+
+- Lỗi 5: Thiếu dấu chấm phẩy ; ở một số dòng (Style/Semicolon Standard)
++ Vị trí: return "Phần trăm giảm không hợp lệ", var giamGia = ..., return giaSauGiam}
++ Giải thích: Mặc dù JavaScript có cơ chế tự động chèn dấu chấm phẩy, việc thiếu dấu chấm phẩy ở cuối câu lệnh đôi khi gây ra những lỗi không báo trước khi gộp file 
++ Cách sửa: Thêm ";" vào cuối các câu lệnh
+
+- Lỗi "ẩn" với var trong vòng lặp for
++ Vị trí: for (var i = 0; i < 5; i++) { setTimeout(...) }
++ Hiện tượng xảy ra: Khi chạy đoạn code gốc, kết quả in ra màn hình sẽ là 5 dòng Item 5 thay vì từ Item 0 đến Item 4
++ Giải thích: 
+* var có function-scope, nó không bị giới hạn trong khối lệnh {} của vòng lặp for. Do đó, chỉ có duy nhất một biến i được tạo ra và dùng chung cho toàn bộ các lần lặp
+* Hàm setTimeout là một hàm bất đồng bộ. Nó sẽ đăng ký hàm hiển thị log và đợi sau 1000ms (1 giây) mới chạy. Trong lúc nó đợi, vòng lặp for đã chạy xong từ lâu và giá trị cuối cùng của biến i lúc này đã tăng lên thành 5
+* Sau 1 giây, các hàm hiển thị log đồng loạt thực thi, chúng nhìn vào biến i chung đó và đều in ra Item 5
++ Cách sửa bằng let: Khi thay var bằng let, let có block-scope (phạm vi khối lệnh). Mỗi một lượt lặp trong vòng for, JavaScript sẽ tạo ra một biến i hoàn toàn mới và "đóng băng" (closure) giá trị của i tại lượt lặp đó cho hàm setTimeout sử dụng. Kết quả sẽ in ra đúng từ Item 0 đến Item 4
