@@ -58,3 +58,17 @@ document.querySelector("#result").innerText = userInput;
 
 // CÁCH 2: Nếu bắt buộc phải nhận HTML, hãy lọc sạch bằng thư viện DOMPurify trước khi chèn
 // document.querySelector("#result").innerHTML = DOMPurify.sanitize(userInput);
+
+Câu A3: 
+1. Kết quả dự đoán (Ngắn gọn)
+- Trường hợp 1 (Mặc định - Đóng comment): 
+Khi click vào #btn, sự kiện sẽ nổi bọt từ phần tử con trong cùng lên các phần tử cha bên ngoài
+
+BUTTON
+INNER
+OUTER
+
+- Trường hợp 2 (Nếu bỏ comment e.stopPropagation();): 
+Hàm này sẽ chặn đứng hành vi nổi bọt, không cho sự kiện lan truyền lên các phần tử cha nữa
+
+BUTTON
