@@ -72,3 +72,95 @@ OUTER
 Hàm này sẽ chặn đứng hành vi nổi bọt, không cho sự kiện lan truyền lên các phần tử cha nữa
 
 BUTTON
+
+Câu C1:
+- Liệt kê 7 lỗi: 
+1. Lỗi gộp dòng (Cú pháp): Các dòng code khai báo ban đầu bị dính liền trên một dòng,gây lỗi biên dịch
+2. Sai tên sự kiện (#decrementBtn): Dùng "onclick" trong addEventListener.Phải sửa thành "click"
+3. Gán giá trị cho biến hằng (#resetBtn): countDisplay được khai báo bằng const nhưng lại bị gán trực tiếp (countDisplay = count). Phải sửa thành countDisplay.textContent = count
+4. Xóa innerHTML sai kiểu (#resetBtn): Gán historyList.innerHTML = null. Nên dùng chuỗi rỗng ""
+5. Gọi hàm thiếu dấu ngoặc (#clearHistory): Dùng item.remove; mà không có cặp ngoặc tròn. Phải sửa thành item.remove();
+6. Sai kiểu dữ liệu khi Load từ localStorage: localStorage.getItem("count") trả về một chuỗi (String). Khi load lên phải chuyển về số  bằng Number() hoặc parseInt(), nếu không khi bấm tăng số nó sẽ bị nối chuỗi
+7. Lỗi Logic / Bảo mật XSS khi tải History: Khi lưu historyList.innerHTML vào localStorage,lúc load lại bạn chưa gán ngược nó vào historyList.innerHTML,đồng thời các sự kiện click để xóa từng thẻ li cũ sẽ bị mất hoàn toàn 
+
+Sửa lỗi:
+const countDisplay = document.querySelector(".count");
+const historyList = document.getElementById("history");
+let count = 0;
+
+document.querySelector("#incrementBtn").addEventListener("click", function() {
+    count++;
+    countDisplay.textContent = count;
+    
+    // Lưu lịch sử
+    const li = document.createElement("li");
+    li.textContent = "Count changed to " + count;
+    historyList.append(li);
+});
+
+document.querySelector("#decrementBtn").addEventListener("click", function() {
+    count--;
+    countDisplay.textContent = count;
+});
+
+document.querySelector("#resetBtn").addEventListener("click", () => {
+    count = 0;
+    countDisplay.textContent = count; // Sửa lỗi gán trực tiếp vào biến const
+    historyList.innerHTML = "";       // Sửa null thành chuỗi rỗng
+});
+
+historyList.addEventListener("click", function(e) {
+    if (e.target && e.target.nodeName === "LI") {
+        e.target.remove();
+    }
+});
+
+document.querySelector("#clearHistory").addEventListener("click", () => {
+    const items = historyList.querySelectorAll("li");
+    items.forEach(item => {
+        item.remove(); // Sửa thiếu dấu ngoặc ()
+    });
+});
+
+window.addEventListener("beforeunload", () => {
+    localStorage.setItem("count", count);
+    localStorage.setItem("history", historyList.innerHTML);
+});
+
+window.addEventListener("load", () => {
+    const savedCount = localStorage.getItem("count");
+    if (savedCount !== null) {
+        count = Number(savedCount); // Sửa lỗi ép kiểu dữ liệu từ String sang Number
+        countDisplay.textContent = count;
+    }
+    
+    const savedHistory = localStorage.getItem("history");
+    if (savedHistory !== null) {
+        historyList.innerHTML = savedHistory; // Khôi phục lại danh sách hiển thị
+    }
+});
+
+Câu C2: 
+1.  
+- Gán 1000 sự kiện riêng lẻ = XẤU: Trình duyệt phải tạo 1000 hàm chạy ngầm trong RAM $\rightarrow$ Nặng máy, ngốn bộ nhớ, giật lag
+- Event Delegation (Ủy quyền sự kiện): Chỉ gán 1 sự kiện duy nhất lên thẻ CHA. Khi click vào con, sự kiện tự "nổi bọt" (Event Bubbling) lên cha.Cha dùng e.target để biết đứa con nào vừa bị click
+- DocumentFragment: Như một cái "khay chứa tạm" trong bộ nhớ (nằm ngoài giao diện DOM)Nhét 1000 món vào khay rồi đổ cả khay vào DOM -> Trình duyệt chỉ cần tính toán lại giao diện (Reflow) 1 lần thay vì 1000 lần
+2. Code Refactor: 
+for (let i = 0; i < 1000; i++) {
+    const div = document.createElement("div");
+    div.textContent = `Item ${i}`;
+    div.className = "item"; // Đánh dấu class để nhận diện
+    
+    fragment.appendChild(div); // Nhét vào khay tạm
+}
+
+// 2. Đổ cả khay vào DOM -> Chỉ Reflow đúng 1 lần duy nhất!
+document.body.appendChild(fragment);
+
+// 3. Event Delegation: Gán 1 sự kiện duy nhất lên thẻ CHA (body)
+document.body.addEventListener("click", (e) => {
+    // Kiểm tra xem phần tử bị click có phải là item không
+    if (e.target && e.target.classList.contains("item")) {
+        console.log("Đã click:", e.target.textContent);
+    }
+});
