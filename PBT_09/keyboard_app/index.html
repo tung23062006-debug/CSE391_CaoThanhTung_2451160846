@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Keyboard App</title>
+    <link rel="stylesheet" href="/PBT_09/keyboard_app/style.css">
+</head>
+
+<body>
+    <h1>Bấm <kbd>Ctrl</kbd> + <kbd>K</kbd> mở lệnh nhanh</h1>
+
+    <div class="gallery">
+        <img id="mainImg" src="https://picsum.photos/id/10/400/250" alt="Gallery" aria-live="polite">
+        <p id="caption" aria-label="Tiêu đề ảnh">Ảnh 1: Cảnh núi</p>
+    </div>
+
+    <div id="palette" class="hidden" role="dialog" aria-modal="true" aria-label="Khung lệnh">
+        <input type="text" id="pInput" placeholder="Gõ lệnh (next, prev, dark)..." aria-label="Tìm lệnh">
+        <ul id="pList" role="listbox"></ul>
+    </div>
+
+    <script src="/PBT_09/keyboard_app/app.js"></script>
+</body>
+
+</html>
