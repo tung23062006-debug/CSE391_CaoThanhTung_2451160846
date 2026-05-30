@@ -1,0 +1,182 @@
+:root {
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-app: #f8fafc;
+    --text-main: #1e293b;
+    --text-muted: #94a3b8;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+    margin: 0;
+}
+
+#app {
+    width: 100%;
+    max-width: 550px;
+    padding: 0 20px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.todo-box {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+/* Form Thêm mới */
+#todoForm {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+}
+
+#todoInput {
+    flex: 1;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+}
+
+#todoInput::placeholder {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+#addBtn {
+    padding: 0 24px;
+    background: transparent;
+    color: var(--primary-color);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#addBtn:hover {
+    background: #f1f5f9;
+}
+
+#todoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1.05rem;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.todo-item:hover {
+    background: #f8fafc;
+}
+
+.todo-item:hover .delete-btn {
+    opacity: 1;
+}
+
+.todo-text {
+    flex: 1;
+    cursor: pointer;
+    transition: color 0.2s, text-decoration 0.2s;
+    word-break: break-all;
+    padding-right: 15px;
+}
+
+.todo-item.completed .todo-text {
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.edit-input {
+    flex: 1;
+    font-size: 1.05rem;
+    padding: 4px 8px;
+    border: 1px solid var(--primary-color);
+    outline: none;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-size: 1.1rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Footer điều khiển */
+.todo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: #f1f5f9;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.filters .filter-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    padding: 4px 10px;
+    margin: 0 2px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #64748b;
+    transition: all 0.2s;
+}
+
+.filters .filter-btn:hover {
+    border-color: #cbd5e1;
+}
+
+.filters .filter-btn.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+#clearCompletedBtn {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    cursor: pointer;
+}
+
+#clearCompletedBtn:hover {
+    text-decoration: underline;
+    color: #ef4444;
+}

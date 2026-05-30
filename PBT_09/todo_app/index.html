@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyên Nghiệp Todo App</title>
+    <link rel="stylesheet" href="/PBT_09/todo_app/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Todos</h1>
+        </header>
+
+        <main class="todo-box">
+            <form id="todoForm">
+                <input id="todoInput" type="text" placeholder="Việc cần làm tiếp theo là gì?" autocomplete="off"
+                    required>
+                <button type="submit" id="addBtn">Add</button>
+            </form>
+
+            <ul id="todoList"></ul>
+
+            <footer class="todo-footer">
+                <span id="todoCount">0 items left</span>
+
+                <div class="filters">
+                    <button data-filter="all" class="filter-btn active">All</button>
+                    <button data-filter="active" class="filter-btn">Active</button>
+                    <button data-filter="completed" class="filter-btn">Completed</button>
+                </div>
+
+                <button id="clearCompletedBtn">Clear Completed</button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="/PBT_09/todo_app/app.js"></script>
+</body>
+
+</html>
